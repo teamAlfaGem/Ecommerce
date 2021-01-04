@@ -1,6 +1,7 @@
 package lk.phoneix.v1.demo.models;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 @Table(name = "roles")
@@ -12,6 +13,9 @@ public class Role {
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
     private ERole name;
+
+    @ManyToMany(mappedBy="")
+    private List<User> users=new ArrayList<>();
 
     public Role() {
 
