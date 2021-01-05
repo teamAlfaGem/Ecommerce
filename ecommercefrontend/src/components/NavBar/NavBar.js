@@ -13,12 +13,12 @@ const NavBar = () => {
     return (
         <div>
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#home">E-Shop</Navbar.Brand>
+                <Navbar.Brand href="/" className="logo">E-Shop</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/products">products</Nav.Link>
+                        <Nav.Link href="/products">Products</Nav.Link>
                         <NavDropdown title="Categories" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/products/phones">Phones</NavDropdown.Item>
                             <NavDropdown.Item href="/products/laptops">Laptops</NavDropdown.Item>
