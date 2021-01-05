@@ -18,13 +18,13 @@ const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="#products">products</Nav.Link>
+                        <Nav.Link href="/products">products</Nav.Link>
                         <NavDropdown title="Categories" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Phones</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Laptops</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Pen Drives</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Tv</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Consoles</NavDropdown.Item>
+                            <NavDropdown.Item href="/products/phones">Phones</NavDropdown.Item>
+                            <NavDropdown.Item href="/products/laptops">Laptops</NavDropdown.Item>
+                            <NavDropdown.Item href="/products/pen-drives">Pen Drives</NavDropdown.Item>
+                            <NavDropdown.Item href="/products/tv">Tv</NavDropdown.Item>
+                            <NavDropdown.Item href="/products/consoles">Consoles</NavDropdown.Item>
                         </NavDropdown>
                         </Nav>
                         <Form inline>
