@@ -14,7 +14,7 @@ public class Role {
     @Column(length = 20)
     private ERole name;
 
-    @ManyToMany(mappedBy="")
+    @ManyToMany(mappedBy="roles")
     private List<User> users=new ArrayList<>();
 
     public Role() {
