@@ -21,6 +21,10 @@ public class Role {
 
     }
 
+    public Role(ERole name, List<User> users) {
+        this.name = name;
+        this.users = users;
+    }
 
     public Role(ERole name) {
         this.name = name;

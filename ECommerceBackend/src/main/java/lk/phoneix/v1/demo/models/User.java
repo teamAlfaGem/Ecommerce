@@ -50,13 +50,15 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(max = 120) String password, String address, List<Role> roles) {
+    public User(String firstName, String lastName, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(max = 120) String password, String address, List<Purchased> purchaseds, List<Cart> carts, List<Role> roles) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.email = email;
         this.password = password;
         this.address = address;
+        this.purchaseds = purchaseds;
+        this.carts = carts;
         this.roles = roles;
     }
 
@@ -122,5 +124,21 @@ public class User {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public List<Purchased> getPurchaseds() {
+        return purchaseds;
+    }
+
+    public void setPurchaseds(List<Purchased> purchaseds) {
+        this.purchaseds = purchaseds;
+    }
+
+    public List<Cart> getCarts() {
+        return carts;
+    }
+
+    public void setCarts(List<Cart> carts) {
+        this.carts = carts;
     }
 }
