@@ -13,6 +13,7 @@ const SignUp = () => {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
+        username: "",
         address: "",
         password1: "",
         password2: ""
@@ -27,6 +28,7 @@ const SignUp = () => {
         console.log(formData)
     }
 
+
     return (
         <div>
             <Container className="mt-5 mb-5 p-5 bg-light " style={classes.formContainer} >
@@ -40,6 +42,9 @@ const SignUp = () => {
                     </Form.Group>
                     <Form.Group >
                         <Form.Control type="text" placeholder="Last name"  name="lastName"onChange={handleChange} />
+                    </Form.Group>
+                    <Form.Group >
+                        <Form.Control type="text" placeholder="Username"  name="username" onChange={handleChange} />
                     </Form.Group>
                     <Form.Group >
                         <Form.Control type="email" placeholder="Email"  name="email" onChange={handleChange} />

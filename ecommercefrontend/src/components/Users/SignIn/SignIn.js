@@ -31,10 +31,10 @@ const SignIn = () => {
                 </h5>
                 <Form onSubmit={handleSubmit} >
                     <Form.Group >
-                        <Form.Control type="email" placeholder="Enter email" autoComplete="off" onChange={handleChange}/>
+                        <Form.Control type="text" placeholder="Username" name="username" onChange={handleChange}/>
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="password" placeholder="Password" autoComplete="off" onChange={handleChange}/>
+                        <Form.Control type="password" placeholder="Password" autoComplete="off" name="password" onChange={handleChange}/>
                     </Form.Group>
                     <Button variant="success" type="submit">
                         Sign In
