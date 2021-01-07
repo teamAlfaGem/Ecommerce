@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(	name = "users",
+@Table(	name = "user",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "username"),
                 @UniqueConstraint(columnNames = "email")
@@ -34,6 +34,12 @@ public class User {
     private String password;
 
     private String address;
+
+    @OneToMany(mappedBy="user")
+    private List<Purchased> purchaseds=new ArrayList<>();
+
+    @OneToMany(mappedBy="user")
+    private List<Cart> carts=new ArrayList<>();
 
     @ManyToMany
     @JoinTable(	name = "user_roles",

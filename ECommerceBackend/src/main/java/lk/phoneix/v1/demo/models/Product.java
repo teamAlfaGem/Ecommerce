@@ -1,9 +1,9 @@
 package lk.phoneix.v1.demo.models;
 
+import java.util.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "products")
 public class Product {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -14,6 +14,10 @@ public class Product {
     private String description;
     private String image;
     private String keyWords;
+
+    @OneToMany(mappedBy="product")
+    private List<Cart> carts=new ArrayList<>();
+
 
     public Product() {
     }

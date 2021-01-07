@@ -1,13 +1,11 @@
 package lk.phoneix.v1.demo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.sql.Date;
+import java.util.*;
 
 @Entity
 public class Purchased {
@@ -31,4 +29,13 @@ public class Purchased {
     private Date expDate;
     private int amount;
     private int cvv;
+
+    @ManyToOne
+    @JoinColumn(name = "userId",referencedColumnName = "id")
+    private User user;
+
+    @OneToMany(mappedBy="purchased")
+    private List<Product_Orders> productOrders=new ArrayList<>();
+
+
 }
