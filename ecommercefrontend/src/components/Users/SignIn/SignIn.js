@@ -29,7 +29,7 @@ const SignIn = () => {
                 <h5 style={classes.info}>
                     Please enter your Email and <br/>Password to Sign In
                 </h5>
-                <Form onSubmit={handleSubmit} >
+                <Form onSubmit={handleSubmit} method="post">
                     <Form.Group >
                         <Form.Control type="text" placeholder="Username" name="username" onChange={handleChange}/>
                     </Form.Group>
