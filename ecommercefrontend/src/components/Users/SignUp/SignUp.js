@@ -34,7 +34,7 @@ const SignUp = () => {
                     Please enter your info and <br/>
                     create your account
                 </h5>
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit} method="post">
                     <Form.Group >
                         <Form.Control type="text" placeholder="First name"  name="firstName" onChange={handleChange}/>
                     </Form.Group>

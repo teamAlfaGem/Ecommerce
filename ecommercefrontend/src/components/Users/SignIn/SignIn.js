@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -8,6 +8,20 @@ import style from './style'
 
 const SignIn = () => {
 
+    const [formData, setFormData] = useState({
+        username : "",
+        password: ""
+    })
+
+    const handleChange = (e) => {
+        setFormData(formData => ({...formData, [e.target.name]: e.target.value}))
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(formData)
+    }
+
     const classes = style
     return (
         <div>
@@ -15,12 +29,12 @@ const SignIn = () => {
                 <h5 style={classes.info}>
                     Please enter your Email and <br/>Password to Sign In
                 </h5>
-                <Form>
+                <Form onSubmit={handleSubmit} >
                     <Form.Group >
-                        <Form.Control type="email" placeholder="Enter email" autocomplete="off"/>
+                        <Form.Control type="email" placeholder="Enter email" autoComplete="off" onChange={handleChange}/>
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="password" placeholder="Password" autocomplete="off"/>
+                        <Form.Control type="password" placeholder="Password" autoComplete="off" onChange={handleChange}/>
                     </Form.Group>
                     <Button variant="success" type="submit">
                         Sign In
