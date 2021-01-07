@@ -7,13 +7,18 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 
+import style from './style'
+
 
 const NavBar = () => {
+
+    const classes = style
 
     return (
         <div>
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="/" className="logo">E-Shop</Navbar.Brand>
+                {/* styles for logo is in App.css */}
+                <Navbar.Brand href="/" className="logo">E-Shop</Navbar.Brand> 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
@@ -30,7 +35,7 @@ const NavBar = () => {
                         <Nav>
                             <Nav.Link href="/cart">
                                 Cart{" "}
-                                <i className="fa fa-shopping-cart" aria-hidden="true" style={{fontSize: '20px'}}></i>
+                                <i className="fa fa-shopping-cart" aria-hidden="true" style={classes.cart}></i>
                             </Nav.Link>
                             <Form inline>
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
