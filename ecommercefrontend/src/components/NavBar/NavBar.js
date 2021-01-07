@@ -27,10 +27,17 @@ const NavBar = () => {
                             <NavDropdown.Item href="/products/consoles">Consoles</NavDropdown.Item>
                         </NavDropdown>
                         </Nav>
-                        <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
+                        <Nav>
+                            <Nav.Link href="/cart">
+                                Cart{" "}
+                                <i className="fa fa-shopping-cart" aria-hidden="true" style={{fontSize: '20px'}}></i>
+                            </Nav.Link>
+                            <Form inline>
+                                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                                <Button variant="outline-success">Search</Button>
+                            </Form>
+
+                        </Nav>
                 </Navbar.Collapse>
             </Navbar>
         </div>
@@ -38,3 +45,4 @@ const NavBar = () => {
 }
 
 export default NavBar
+ 
