@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -9,6 +9,24 @@ import style from './style'
 const SignUp = () => {
     
     const classes = style
+
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        address: "",
+        password1: "",
+        password2: ""
+    })
+
+    const handleChange = (e) => {
+        setFormData(formData => ({...formData, [e.target.name]: e.target.value}))
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(formData)
+    }
+
     return (
         <div>
             <Container className="mt-5 mb-5 p-5 bg-light " style={classes.formContainer} >
@@ -16,24 +34,27 @@ const SignUp = () => {
                     Please enter your info and <br/>
                     create your account
                 </h5>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Form.Group >
-                        <Form.Control type="text" placeholder="First name" autocomplete="off" name="firstName"/>
+                        <Form.Control type="text" placeholder="First name"  name="firstName" onChange={handleChange}/>
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="text" placeholder="Last name" autocomplete="off" name="lastName"/>
+                        <Form.Control type="text" placeholder="Last name"  name="lastName"onChange={handleChange} />
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="email" placeholder="Email" autocomplete="off" name="email"/>
+                        <Form.Control type="email" placeholder="Email"  name="email" onChange={handleChange} />
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control as="textarea" placeholder="Address" autocomplete="off" name="address"/>
+                        <Form.Control as="textarea" placeholder="Address"  name="address" onChange={handleChange}/>
+                        <Form.Text className="text-muted mb-1">
+                            Your orders will be delivered to this address, You can change it latter!!
+                        </Form.Text>
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="Password" placeholder="Password" autocomplete="off" name="password1"/>
+                        <Form.Control type="Password" placeholder="Password"  name="password1" onChange={handleChange}/>
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="password" placeholder="Re-type password" autocomplete="off" name="password2"/>
+                        <Form.Control type="password" placeholder="Re-type password"  name="password2" onChange={handleChange}/>
                     </Form.Group>
                     <Button variant="success" type="submit">
                         Sign Up
