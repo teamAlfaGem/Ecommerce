@@ -31,18 +31,19 @@ const NavBar = () => {
                             <NavDropdown.Item href="/products/tv">Tv</NavDropdown.Item>
                             <NavDropdown.Item href="/products/consoles">Consoles</NavDropdown.Item>
                         </NavDropdown>
+                        <Nav.Link href="/cart">
+                            Cart{" "}
+                            <i className="fa fa-shopping-cart" aria-hidden="true" style={classes.cart}></i>
+                        </Nav.Link>
+                        <Form inline style={classes.searchForm}>
+                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                            <Button variant="outline-success">Search</Button>
+                        </Form>
                         </Nav>
-                        <Nav>
-                            <Nav.Link href="/cart">
-                                Cart{" "}
-                                <i className="fa fa-shopping-cart" aria-hidden="true" style={classes.cart}></i>
-                            </Nav.Link>
-                            <Form inline>
-                                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                                <Button variant="outline-success">Search</Button>
-                            </Form>
+                        
+                        <Button variant="outline-info" href="/users/sign-in">SignIn</Button>
 
-                        </Nav>
+                        
                 </Navbar.Collapse>
             </Navbar>
         </div>
