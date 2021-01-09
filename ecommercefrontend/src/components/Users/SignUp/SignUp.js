@@ -38,28 +38,35 @@ const SignUp = () => {
                 </h5>
                 <Form onSubmit={handleSubmit} method="post">
                     <Form.Group >
-                        <Form.Control type="text" placeholder="First name"  name="firstName" onChange={handleChange}/>
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control type="text"  name="firstName" onChange={handleChange}/>
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="text" placeholder="Last name"  name="lastName"onChange={handleChange} />
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control type="text"  name="lastName"onChange={handleChange} />
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="text" placeholder="Username"  name="username" onChange={handleChange} />
-                    </Form.Group>
-                    <Form.Group >
-                        <Form.Control type="email" placeholder="Email"  name="email" onChange={handleChange} />
-                    </Form.Group>
-                    <Form.Group >
-                        <Form.Control as="textarea" placeholder="Address"  name="address" onChange={handleChange}/>
+                        <Form.Label>Address</Form.Label>
+                        <Form.Control as="textarea" name="address" onChange={handleChange}/>
                         <Form.Text className="text-muted mb-1">
                             Your orders will be delivered to this address, You can change it latter!!
                         </Form.Text>
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="Password" placeholder="Password"  name="password1" onChange={handleChange}/>
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control type="text" name="username" onChange={handleChange} />
                     </Form.Group>
                     <Form.Group >
-                        <Form.Control type="password" placeholder="Re-type password"  name="password2" onChange={handleChange}/>
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email" name="email" onChange={handleChange} />
+                    </Form.Group>
+                    <Form.Group >
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="Password" name="password1" onChange={handleChange}/>
+                    </Form.Group>
+                    <Form.Group >
+                        <Form.Label>Re-type Password</Form.Label>
+                        <Form.Control type="password" name="password2" onChange={handleChange}/>
                     </Form.Group>
                     <Button variant="success" type="submit">
                         Sign Up
