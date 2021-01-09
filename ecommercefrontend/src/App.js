@@ -9,6 +9,7 @@ import SignUp from './pages/Users/SignUp/SignUp'
 import Profile from './pages/Users/Profile/Profile'
 import SingleProductInfo from './pages/SingleProductInfo/SingleProductInfo'
 import Products from './pages/Products/Products'
+
 import Error from './components/Error/Error'
 
 import PageLayout from './Layouts/PageLayout'
