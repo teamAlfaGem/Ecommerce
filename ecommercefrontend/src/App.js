@@ -2,7 +2,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 
-import Home from './components/Home/Home'
+import Home from './pages/Home/Home'
 import Cart from './components/Cart/Cart'
 import SignIn from './components/Users/SignIn/SignIn'
 import SignUp from './components/Users/SignUp/SignUp'
