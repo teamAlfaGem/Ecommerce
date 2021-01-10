@@ -3,26 +3,28 @@ package lk.phoneix.v1.demo.models;
 import javax.persistence.*;
 
 @Entity
-public class Cart {
+public class Product_Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int qty;
+    private int amount;
+    @ManyToOne
+    @JoinColumn(name = "purchasedId",referencedColumnName="id")
+    private Purchased purchased;
 
     @ManyToOne
-    @JoinColumn(name="userId", referencedColumnName="id")
-    private User user;
-    @ManyToOne
-    @JoinColumn(name="productId", referencedColumnName="id")
+    @JoinColumn(name="productId",referencedColumnName="id")
     private Product product;
 
-    public Cart() {
+    public Product_Orders() {
     }
 
-    public Cart(int qty, User user, Product product) {
+    public Product_Orders(int qty, int amount, Purchased purchased, Product product) {
         this.qty = qty;
-        this.user = user;
+        this.amount = amount;
+        this.purchased = purchased;
         this.product = product;
     }
 
@@ -42,12 +44,20 @@ public class Cart {
         this.qty = qty;
     }
 
-    public User getUser() {
-        return user;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public Purchased getPurchased() {
+        return purchased;
+    }
+
+    public void setPurchased(Purchased purchased) {
+        this.purchased = purchased;
     }
 
     public Product getProduct() {

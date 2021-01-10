@@ -1,9 +1,9 @@
 package lk.phoneix.v1.demo.models;
 
+import java.util.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "products")
 public class Product {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -15,16 +15,25 @@ public class Product {
     private String image;
     private String keyWords;
 
+    @OneToMany(mappedBy="product")
+    private List<Cart> carts=new ArrayList<>();
+
+    @OneToMany(mappedBy="product")
+    private List<Product_Orders> productOrders=new ArrayList<>();
+
+
     public Product() {
     }
 
-    public Product(String name, String brand, double price, String description, String image, String keyWords) {
+    public Product(String name, String brand, double price, String description, String image, String keyWords, List<Cart> carts, List<Product_Orders> productOrders) {
         this.name = name;
         this.brand = brand;
         this.price = price;
         this.description = description;
         this.image = image;
         this.keyWords = keyWords;
+        this.carts = carts;
+        this.productOrders = productOrders;
     }
 
     public Long getId() {
@@ -81,5 +90,21 @@ public class Product {
 
     public void setKeyWords(String keyWords) {
         this.keyWords = keyWords;
+    }
+
+    public List<Cart> getCarts() {
+        return carts;
+    }
+
+    public void setCarts(List<Cart> carts) {
+        this.carts = carts;
+    }
+
+    public List<Product_Orders> getProductOrders() {
+        return productOrders;
+    }
+
+    public void setProductOrders(List<Product_Orders> productOrders) {
+        this.productOrders = productOrders;
     }
 }

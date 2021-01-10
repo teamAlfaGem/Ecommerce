@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(	name = "users",
+@Table(	name = "user",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "username"),
                 @UniqueConstraint(columnNames = "email")
@@ -35,6 +35,12 @@ public class User {
 
     private String address;
 
+    @OneToMany(mappedBy="user")
+    private List<Purchased> purchaseds=new ArrayList<>();
+
+    @OneToMany(mappedBy="user")
+    private List<Cart> carts=new ArrayList<>();
+
     @ManyToMany
     @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id",referencedColumnName="id"),
@@ -44,13 +50,15 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(max = 120) String password, String address, List<Role> roles) {
+    public User(String firstName, String lastName, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(max = 120) String password, String address, List<Purchased> purchaseds, List<Cart> carts, List<Role> roles) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.email = email;
         this.password = password;
         this.address = address;
+        this.purchaseds = purchaseds;
+        this.carts = carts;
         this.roles = roles;
     }
 
@@ -116,5 +124,21 @@ public class User {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public List<Purchased> getPurchaseds() {
+        return purchaseds;
+    }
+
+    public void setPurchaseds(List<Purchased> purchaseds) {
+        this.purchaseds = purchaseds;
+    }
+
+    public List<Cart> getCarts() {
+        return carts;
+    }
+
+    public void setCarts(List<Cart> carts) {
+        this.carts = carts;
     }
 }

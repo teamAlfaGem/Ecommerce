@@ -8,7 +8,7 @@ import java.util.*;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
@@ -21,16 +21,20 @@ public class Role {
 
     }
 
+    public Role(ERole name, List<User> users) {
+        this.name = name;
+        this.users = users;
+    }
 
     public Role(ERole name) {
         this.name = name;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
