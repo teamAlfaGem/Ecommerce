@@ -16,7 +16,7 @@ const SingleProduct = () => {
                     lorem ipsium
                     
                     </Card.Text>
-                    <Button variant="danger">Add to Cart</Button><Button variant="info">View</Button>
+                    <Button variant="danger" >Add to Cart</Button><Button variant="info" className="ml-2">View Product</Button>
                 </Card.Body>
                 </Card>
         </div>
