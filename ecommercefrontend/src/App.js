@@ -2,13 +2,15 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 
-import Home from './components/Home/Home'
-import Cart from './components/Cart/Cart'
-import SignIn from './components/Users/SignIn/SignIn'
-import SignUp from './components/Users/SignUp/SignUp'
-import Profile from './components/Users/Profile/Profile'
-import SingleProductInfo from './components/Products/SingleProductInfo/SingleProductInfo'
-import Products from './components/Products/Products'
+import Home from './pages/Home/Home'
+import Cart from './pages/Cart/Cart'
+import SignIn from './pages/Users/SignIn/SignIn'
+import SignUp from './pages/Users/SignUp/SignUp'
+import Profile from './pages/Users/Profile/Profile'
+import SingleProductInfo from './pages/SingleProductInfo/SingleProductInfo'
+import Products from './pages/Products/Products'
+
+import Error from './components/Error/Error'
 
 import PageLayout from './Layouts/PageLayout'
 import UsersLayout from './Layouts/UsersLayout'
@@ -18,30 +20,32 @@ function App() {
     <div>
       <Router>
         <Switch>
-          
+        
           <Route path="/users/:path" exact>
             <UsersLayout>
               <Switch>
-                <Route  path="/users/sign-in" component={SignIn}/>
-                <Route  path="/users/sign-up" component={SignUp}/>
-                <Route  path="/users/profile" component={Profile}/>
+                <Route  exact path="/users/sign-in" component={SignIn}/>
+                <Route  exact path="/users/sign-up" component={SignUp}/>
+                <Route  exact path="/users/profile" component={Profile}/>
+                <Route component={Error} />
               </Switch>
             </UsersLayout>
           </Route>
 
-          <Route>
+          <Route path="/">
             <PageLayout>
               <Switch>
-                <Route path="/"  component={Home}/>
-                <Route path="/products/:id" component={Products}/>
-                <Route path="/products" component={Products}/>
-                <Route path="/products/single-product/:id" component={SingleProductInfo}/>
-                <Route path="/cart" component={Cart}/>
-
+                <Route exact path="/"  component={Home}/>
+                <Route exact path="/products/:id" component={Products}/>
+                <Route exact path="/products" component={Products}/>
+                <Route exact path="/products/single-product/:id" component={SingleProductInfo}/>
+                <Route exact path="/cart" component={Cart}/>
+                <Route component={Error} />
               </Switch>
             </PageLayout>
           </Route>
-
+        
+          
         </Switch>
       </Router>
     </div>
@@ -49,6 +53,8 @@ function App() {
 }
 
 export default App;
+          
+         
 
 
           
