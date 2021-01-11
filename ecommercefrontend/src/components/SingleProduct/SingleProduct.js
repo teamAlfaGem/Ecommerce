@@ -11,9 +11,7 @@ const SingleProduct = () => {
                 <Card.Body>
                     <Card.Title>Product Name</Card.Title>
                     <Card.Text>
-                    Basic description <br/>
-                    of the product<br/>
-                    lorem ipsium
+                    Price : $$
                     
                     </Card.Text>
                     <Button variant="danger" >Add to Cart</Button><Button variant="info" className="ml-2">View Product</Button>
