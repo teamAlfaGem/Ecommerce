@@ -1,10 +1,16 @@
 import React from 'react'
 
+import Container from 'react-bootstrap/Container'
+
+import SingleProductInCart from '../../components/SingleProductInCart/SingleProductInCart'
+
 const Cart = () => {
     return (
-        <div>
+        <Container>
             Cart
-        </div>
+            <h1>Total Price: </h1>
+            <SingleProductInCart />
+        </Container>
     )
 }
 
