@@ -50,6 +50,15 @@ public class User {
     public User() {
     }
 
+    public User(String firstName, String lastName, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(max = 120) String password, String address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.address = address;
+    }
+
     public User(String firstName, String lastName, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(max = 120) String password, String address, List<Purchased> purchaseds, List<Cart> carts, List<Role> roles) {
         this.firstName = firstName;
         this.lastName = lastName;
