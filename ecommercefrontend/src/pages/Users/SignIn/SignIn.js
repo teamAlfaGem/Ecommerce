@@ -25,7 +25,7 @@ const SignIn = () => {
     const classes = style
     return (
         <div>
-            <Container className="mt-5 p-5 bg-light" style={classes.formContainer}>
+            <Container className="mt-5 mb-5 p-5 bg-light" style={classes.formContainer}>
                 <h5 style={classes.info}>
                     Please enter your Email and <br/>Password to Sign In
                 </h5>
