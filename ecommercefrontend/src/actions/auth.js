@@ -2,10 +2,10 @@ import { REGISTER_SUCCESS, REGISTER_FAIL, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, SET
 
 import { login, logout, register } from '../services/auth.service'
 
-export const registerAction = (username, email, password) => async (dispatch) => {
+export const registerAction = (firstname, lastname, address, username, email, password) => async (dispatch) => {
     
     try {
-        const response = register(username, email, password)
+        const response = register(firstname, lastname, address, username, email, password)
         
         dispatch({type: REGISTER_SUCCESS});
         

@@ -19,9 +19,12 @@ export const logout = () => {
     localStorage.removeItem("user")
 }
 
-export const register = async (username, email, password) => {
+export const register = async (firstname, lastname, address, username, email, password) => {
     
     const response = await axios.post(`${process.env.REACT_APP_API_AUTH}/signup`, {
+        firstname,
+        lastname,
+        address,
         username,
         email,
         password
