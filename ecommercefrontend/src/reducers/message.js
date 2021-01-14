@@ -2,7 +2,7 @@ import { SET_MESSAGE, CLEAR_MESSAGE } from "../actions/types"
 
 const initialState = {}
 
-export const message = (state = initialState, action) => {
+const message = (state = initialState, action) => {
     switch (action.type) {
         
         case SET_MESSAGE:
@@ -12,6 +12,8 @@ export const message = (state = initialState, action) => {
             return { message: "" }
 
         default:
-            break;
+            return state
     }
 } 
+
+export default message
