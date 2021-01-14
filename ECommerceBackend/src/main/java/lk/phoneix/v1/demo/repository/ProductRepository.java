@@ -11,8 +11,8 @@ import java.util.*;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    @Query("from Product where category=:category")
-    public List<Product>getProductByCategory(@Param("category") String category);
+    @Query(value = "select * from Product where category=?0",nativeQuery = true)
+    public List<Product>getProductByCategory(String category);
 
 
 }
