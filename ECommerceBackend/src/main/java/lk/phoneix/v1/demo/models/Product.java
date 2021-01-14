@@ -10,6 +10,7 @@ public class Product {
     private Long id;
     private String name;
     private String brand;
+    private String category;
     private double price;
     private String description;
     private String image;
@@ -25,15 +26,24 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String brand, double price, String description, String image, String keyWords, List<Cart> carts, List<Product_Orders> productOrders) {
+    public Product(String name, String brand, String category, double price, String description, String image, String keyWords, List<Cart> carts, List<Product_Orders> productOrders) {
         this.name = name;
         this.brand = brand;
+        this.category = category;
         this.price = price;
         this.description = description;
         this.image = image;
         this.keyWords = keyWords;
         this.carts = carts;
         this.productOrders = productOrders;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public Long getId() {
