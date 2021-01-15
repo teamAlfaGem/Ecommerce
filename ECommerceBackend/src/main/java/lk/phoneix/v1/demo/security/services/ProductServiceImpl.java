@@ -47,4 +47,10 @@ public class ProductServiceImpl implements ProductServiceRepo {
         List<Product>products=productRepository.getProductByCategory(category);
         return products;
     }
+
+    @Override
+    public List<Product> getProductByKeyWords(String keyword) {
+        List<Product>products=productRepository.getProductByKeyWords(keyword);
+        return products;
+    }
 }

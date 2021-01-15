@@ -80,7 +80,7 @@ public class AuthController {
                 signUpRequest.getAddress());
 
         Set<String> strRoles = signUpRequest.getRole();
-        Set<Role> roles = new HashSet<>();
+        List<Role> roles = new ArrayList<>();
 
         if (strRoles == null) {
             Role userRole = roleRepository.findByName(ERole.ROLE_USER)
@@ -103,7 +103,7 @@ public class AuthController {
             });
         }
 
-        user.setRoles((List<Role>) roles);
+        user.setRoles(roles);
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
