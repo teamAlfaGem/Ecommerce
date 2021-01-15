@@ -16,5 +16,6 @@ public interface ProductServiceRepo {
     void updateProduct(Product product);
 
     List<Product>findProductByCategory(String category);
+    List<Product>findProductByKeyWords(String keyword);
 
 }
