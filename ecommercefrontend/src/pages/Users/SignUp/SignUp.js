@@ -36,6 +36,8 @@ const SignUp = () => {
                 formData.firstName,
                 formData.lastName,
                 formData.address,
+                formData.username,
+                formData.email,
                 formData.password1
             ))    
         } catch (error) {

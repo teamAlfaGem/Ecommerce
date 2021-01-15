@@ -5,6 +5,7 @@ import { login, logout, register } from '../services/auth.service'
 export const registerAction = (firstname, lastname, address, username, email, password) => async (dispatch) => {
     
     try {
+        console.log(password)
         const response = register(firstname, lastname, address, username, email, password)
         
         dispatch({type: REGISTER_SUCCESS});
