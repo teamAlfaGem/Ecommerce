@@ -4,9 +4,15 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 
+import { useDispatch } from 'react-redux';
+import { loginAction } from '../../../actions/auth'
+
+
 import style from './style'
 
 const SignIn = () => {
+
+    const dispatch = useDispatch()
 
     const [formData, setFormData] = useState({
         username : "",
@@ -20,6 +26,15 @@ const SignIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(formData)
+
+        try {
+            dispatch(loginAction(formData.username, formData.password))
+        
+        } catch (error) {
+            
+        }
+            
+
     }
 
     const classes = style

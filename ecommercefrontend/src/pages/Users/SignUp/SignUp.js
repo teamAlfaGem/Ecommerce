@@ -4,9 +4,13 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 
+import { useDispatch } from 'react-redux';
+import { registerAction } from '../../../actions/auth'
+
 import style from './style'
 
 const SignUp = () => {
+    const dispatch = useDispatch()
     
     const classes = style
 
@@ -26,6 +30,17 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(formData)
+        
+        try {
+            dispatch(registerAction(
+                formData.firstName,
+                formData.lastName,
+                formData.address,
+                formData.password1
+            ))    
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 
