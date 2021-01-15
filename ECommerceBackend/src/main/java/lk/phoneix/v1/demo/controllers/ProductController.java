@@ -25,8 +25,8 @@ public class ProductController {
         return productServiceRepo.findProductByCategory(category);
     }
     @GetMapping("/{keyword}")
-    public List<Product>findProductByKeyWords(@PathVariable("keyword") String keyword){
-        return productServiceRepo.findProductByKeyWords(keyword);
+    public List<Product>findProductByKeywords(@PathVariable("keyword") String keyword){
+        return productServiceRepo.findProductByKeywords(keyword);
     }
 
 
