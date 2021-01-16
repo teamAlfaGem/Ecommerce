@@ -29,7 +29,10 @@ const NavBar = () => {
 
             <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
-                <Dropdown.Item onClick={() => {dispatch(logoutAction())}}>Logout</Dropdown.Item>
+                <Dropdown.Item onClick={() => {
+                    dispatch(logoutAction())
+                    window.location.reload()
+                    }}>Logout</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     )
