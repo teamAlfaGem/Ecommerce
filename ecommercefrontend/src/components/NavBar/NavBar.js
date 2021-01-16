@@ -6,6 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 import style from './style'
 
@@ -13,6 +14,19 @@ import style from './style'
 const NavBar = () => {
 
     const classes = style
+
+    const contentIfUserIsLoggedIn = (
+        <Dropdown  menuAlign={{ lg: 'right' }}>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={{marginRight: '30px'}}>
+                <i className="fa fa-user" aria-hidden="true">{' '}</i>{'  '}Username
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Logout</Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
+    )
 
     return (
         <div>
@@ -41,8 +55,8 @@ const NavBar = () => {
                             </Form>
                         </Nav>
                         
-                        <Button variant="outline-info" href="/users/sign-in">SignIn</Button>
-
+                        {/* <Button variant="outline-info" href="/users/sign-in">SignIn</Button> */}
+                        {contentIfUserIsLoggedIn}
                         
                 </Navbar.Collapse>
             </Navbar>
