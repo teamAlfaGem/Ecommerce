@@ -18,7 +18,7 @@ const NavBar = () => {
     const dispatch = useDispatch()
     
     const classes = style
-    // localStorage.removeItem('user')
+    
     const { username } = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : ""
 
     const contentIfUserIsLoggedIn = (
