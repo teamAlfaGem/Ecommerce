@@ -16,11 +16,11 @@ import { logoutAction } from '../../actions/auth'
 
 const NavBar = () => {
     const dispatch = useDispatch()
-
+    
     const classes = style
-    console.log(localStorage.getItem('user'))
-    const { username } = JSON.parse(localStorage.getItem('user'))
-    console.log('username', username)
+    // localStorage.removeItem('user')
+    const { username } = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : ""
+
     const contentIfUserIsLoggedIn = (
         <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic" style={classes.userDropdown}>
@@ -29,7 +29,7 @@ const NavBar = () => {
 
             <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
-                <Dropdown.Item onClick={() => {dispatch(logoutAction)}}>Logout</Dropdown.Item>
+                <Dropdown.Item onClick={() => {dispatch(logoutAction())}}>Logout</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     )
@@ -62,7 +62,7 @@ const NavBar = () => {
                         </Nav>
                         
                         {/* <Button variant="outline-info" href="/users/sign-in">SignIn</Button> */}
-                        {localStorage.getItem('user') ? (contentIfUserIsLoggedIn) : (<Button variant="outline-info" href="/users/sign-in">SignIn</Button>)}
+                        {username ? (contentIfUserIsLoggedIn) : (<Button variant="outline-info" href="/users/sign-in">SignIn</Button>)}
                         
                 </Navbar.Collapse>
             </Navbar>
