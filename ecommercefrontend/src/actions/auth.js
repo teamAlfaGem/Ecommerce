@@ -9,7 +9,7 @@ export const registerAction = (firstname, lastname, address, username, email, pa
         
         const response = await register(firstname, lastname, address, username, email, password)
         
-        dispatch({type: REGISTER_SUCCESS});
+        await dispatch({type: REGISTER_SUCCESS});
         
         dispatch({
             type: SET_MESSAGE,
@@ -36,7 +36,7 @@ export const loginAction = (username, password) => async (dispatch) => {
         const response = await login(username, password)
 
         dispatch({type: LOGIN_SUCCESS, payload: { user: response} })
-       
+        
 
     } catch (error) {
         const message = error.message || error.toString();
@@ -47,6 +47,7 @@ export const loginAction = (username, password) => async (dispatch) => {
             type: SET_MESSAGE,
             payload: message,
         });
+       
     }
 }
 

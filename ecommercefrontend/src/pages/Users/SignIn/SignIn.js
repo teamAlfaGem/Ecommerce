@@ -25,11 +25,11 @@ const SignIn = () => {
         setFormData(formData => ({...formData, [e.target.name]: e.target.value}))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
         try {
-            dispatch(loginAction(formData.username, formData.password))
+            await dispatch(loginAction(formData.username, formData.password))
             history.push('/')
         
         } catch (error) {
