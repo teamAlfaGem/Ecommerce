@@ -2,11 +2,12 @@ import { REGISTER_SUCCESS, REGISTER_FAIL, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, SET
 
 import { login, logout, register } from '../services/auth.service'
 
+
 export const registerAction = (firstname, lastname, address, username, email, password) => async (dispatch) => {
     
     try {
-        console.log(password)
-        const response = register(firstname, lastname, address, username, email, password)
+        
+        const response = await register(firstname, lastname, address, username, email, password)
         
         dispatch({type: REGISTER_SUCCESS});
         
@@ -28,12 +29,14 @@ export const registerAction = (firstname, lastname, address, username, email, pa
 
 }
 
-export const loginAction = (username, password) => (dispatch) => {
+export const loginAction = (username, password) => async (dispatch) => {
+    
 
     try {
-        const response = login(username, password)
+        const response = await login(username, password)
 
         dispatch({type: LOGIN_SUCCESS, payload: { user: response} })
+       
 
     } catch (error) {
         const message = error.message || error.toString();
