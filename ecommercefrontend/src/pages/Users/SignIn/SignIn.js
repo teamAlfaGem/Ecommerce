@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -11,6 +12,7 @@ import { loginAction } from '../../../actions/auth'
 import style from './style'
 
 const SignIn = () => {
+    const history = useHistory()
 
     const dispatch = useDispatch()
 
@@ -25,13 +27,13 @@ const SignIn = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(formData)
 
         try {
             dispatch(loginAction(formData.username, formData.password))
+            history.push('/')
         
         } catch (error) {
-            
+            console.log(error)
         }
             
 
