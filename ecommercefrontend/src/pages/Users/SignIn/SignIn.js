@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
+import { toast } from "react-toastify";
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -30,7 +31,9 @@ const SignIn = () => {
 
         try {
             await dispatch(loginAction(formData.username, formData.password))
+            toast.success('successfully signed in !!')
             history.push('/')
+            
         
         } catch (error) {
             console.log(error)

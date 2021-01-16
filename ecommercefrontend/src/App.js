@@ -1,5 +1,6 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { ToastContainer } from "react-toastify";
 
 
 import Home from './pages/Home/Home'
@@ -18,9 +19,22 @@ import UsersLayout from './Layouts/UsersLayout'
 function App() {
   return (
     <div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        />
+        
       <Router>
         <Switch>
-        
+          
+
           <Route path="/users/:path" exact>
             <UsersLayout>
               <Switch>

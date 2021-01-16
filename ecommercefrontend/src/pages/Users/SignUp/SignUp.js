@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
+import { toast } from "react-toastify";
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -42,6 +43,7 @@ const SignUp = () => {
                 formData.email,
                 formData.password1
             ))
+            toast.success('successfully signuped, now sign in !!')
             history.push('/users/sign-in')    
         } catch (error) {
             console.log(error)
