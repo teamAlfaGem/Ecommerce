@@ -10,20 +10,26 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 import style from './style'
 
+import { useDispatch } from 'react-redux';
+import { logoutAction } from '../../actions/auth'
+
 
 const NavBar = () => {
+    const dispatch = useDispatch()
 
     const classes = style
-
+    console.log(localStorage.getItem('user'))
+    const { username } = JSON.parse(localStorage.getItem('user'))
+    console.log('username', username)
     const contentIfUserIsLoggedIn = (
-        <Dropdown  menuAlign={{ lg: 'right' }}>
-            <Dropdown.Toggle variant="success" id="dropdown-basic" style={{marginRight: '30px'}}>
-                <i className="fa fa-user" aria-hidden="true">{' '}</i>{'  '}Username
+        <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={classes.userDropdown}>
+                <i className="fa fa-user" aria-hidden="true">{' '}</i>{'  '}{ username }
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Logout</Dropdown.Item>
+                <Dropdown.Item onClick={() => {dispatch(logoutAction)}}>Logout</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     )
@@ -56,7 +62,7 @@ const NavBar = () => {
                         </Nav>
                         
                         {/* <Button variant="outline-info" href="/users/sign-in">SignIn</Button> */}
-                        {contentIfUserIsLoggedIn}
+                        {localStorage.getItem('user') ? (contentIfUserIsLoggedIn) : (<Button variant="outline-info" href="/users/sign-in">SignIn</Button>)}
                         
                 </Navbar.Collapse>
             </Navbar>
