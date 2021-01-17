@@ -44,9 +44,11 @@ const SignUp = () => {
                 formData.password1
             ))
             toast.success('successfully signuped, now sign in !!')
-            history.push('/users/sign-in')    
+            history.push('/users/sign-in')
+                
         } catch (error) {
             console.log(error)
+            toast.error('username or email already in use!!')
         }
     }
 
