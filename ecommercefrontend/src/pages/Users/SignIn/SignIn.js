@@ -36,10 +36,9 @@ const SignIn = () => {
             
         
         } catch (error) {
-            console.log(error)
+            console.log(error.message)
+            toast.error('Invalid Credentials!!')
         }
-            
-
     }
 
     const classes = style

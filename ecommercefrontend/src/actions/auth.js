@@ -31,24 +31,11 @@ export const registerAction = (firstname, lastname, address, username, email, pa
 
 export const loginAction = (username, password) => async (dispatch) => {
     
-
-    try {
-        const response = await login(username, password)
-
-        dispatch({type: LOGIN_SUCCESS, payload: { user: response} })
-        
-
-    } catch (error) {
-        const message = error.message || error.toString();
-
-        dispatch({type: LOGIN_FAIL});
     
-        dispatch({
-            type: SET_MESSAGE,
-            payload: message,
-        });
-       
-    }
+    const response = await login(username, password)
+    
+    dispatch({type: LOGIN_SUCCESS, payload: { user: response} })
+    
 }
 
 export const logoutAction = () => (dispatch) => {
