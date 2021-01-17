@@ -9,11 +9,13 @@ import java.util.List;
 public interface CartServiceRepo {
     List<Cart> findAllCarts();
 
-    Cart findCart(Long CartId);
+    Cart findCart(Long cartId);
 
-    void deleteCart(Long CartId);
+    void deleteCart(Long cartId);
 
-    void saveCart(Cart Cart);
+    void saveCart(Cart cart);
 
-    void updateCart(Cart Cart);
+    void updateCart(Cart cart);
+    public List<Cart> getCartByUserId(Long user_id);
+
 }
