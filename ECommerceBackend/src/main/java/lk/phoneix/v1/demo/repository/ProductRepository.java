@@ -17,5 +17,10 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query(value = "select * from Product  where keywords like %?1%",nativeQuery = true)
     public List<Product>getProductByKeywords(String keyword);
 
+    @Query(value = "select * from Product where pname=?1",nativeQuery = true)
+    Product checkImageByProductName(String name);
+
+
+
 
 }

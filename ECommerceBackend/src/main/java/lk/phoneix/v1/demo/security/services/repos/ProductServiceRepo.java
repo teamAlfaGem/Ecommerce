@@ -1,6 +1,8 @@
 package lk.phoneix.v1.demo.security.services.repos;
 
 import lk.phoneix.v1.demo.models.Product;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.*;
 
 public interface ProductServiceRepo {
@@ -11,7 +13,7 @@ public interface ProductServiceRepo {
 
     void deleteProduct(Long productId);
 
-    void saveProduct(Product product);
+    void saveProduct(MultipartFile file, Product product);
 
     void updateProduct(Product product);
 

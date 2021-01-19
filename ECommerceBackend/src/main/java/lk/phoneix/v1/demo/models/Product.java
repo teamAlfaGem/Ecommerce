@@ -1,19 +1,25 @@
 package lk.phoneix.v1.demo.models;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 import javax.persistence.*;
 
+@Component
+@ConfigurationProperties(prefix = "file")
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String pname;
     private String brand;
     private String category;
     private double price;
     private String description;
-    private String image;
+    private String imageName;
+    private String uploadDir;
     private String keyWords;
 
     @OneToMany(mappedBy="product")
@@ -26,13 +32,14 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String brand, String category, double price, String description, String image, String keyWords, List<Cart> carts, List<Product_Orders> productOrders) {
-        this.name = name;
+    public Product(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keyWords, List<Cart> carts, List<Product_Orders> productOrders) {
+        this.pname = pname;
         this.brand = brand;
         this.category = category;
         this.price = price;
         this.description = description;
-        this.image = image;
+        this.imageName = imageName;
+        this.uploadDir = uploadDir;
         this.keyWords = keyWords;
         this.carts = carts;
         this.productOrders = productOrders;
@@ -54,12 +61,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getPname() {
+        return pname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPname(String pname) {
+        this.pname = pname;
     }
 
     public String getBrand() {
@@ -86,12 +93,20 @@ public class Product {
         this.description = description;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public String getUploadDir() {
+        return uploadDir;
+    }
+
+    public void setUploadDir(String uploadDir) {
+        this.uploadDir = uploadDir;
     }
 
     public String getKeyWords() {
