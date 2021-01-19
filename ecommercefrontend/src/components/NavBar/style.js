@@ -3,6 +3,9 @@ const styles =  {
         color: 'red',
         fontSize: '20px',
         marginRight: '10px'
+    },
+    userDropdown : {
+        marginRight: '30px'
     }
 }
 

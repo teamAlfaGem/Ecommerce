@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
+import { toast } from "react-toastify";
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -11,6 +13,7 @@ import { loginAction } from '../../../actions/auth'
 import style from './style'
 
 const SignIn = () => {
+    const history = useHistory()
 
     const dispatch = useDispatch()
 
@@ -23,18 +26,19 @@ const SignIn = () => {
         setFormData(formData => ({...formData, [e.target.name]: e.target.value}))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(formData)
 
         try {
-            dispatch(loginAction(formData.username, formData.password))
+            await dispatch(loginAction(formData.username, formData.password))
+            toast.success('successfully signed in !!')
+            history.push('/')
+            
         
         } catch (error) {
-            
+            console.log(error.message)
+            toast.error('Invalid Credentials!!')
         }
-            
-
     }
 
     const classes = style

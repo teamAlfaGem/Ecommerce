@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
+import { toast } from "react-toastify";
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -10,6 +12,7 @@ import { registerAction } from '../../../actions/auth'
 import style from './style'
 
 const SignUp = () => {
+    const history = useHistory()
     const dispatch = useDispatch()
     
     const classes = style
@@ -27,21 +30,25 @@ const SignUp = () => {
         setFormData(formData => ({...formData, [e.target.name]: e.target.value}))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         console.log(formData)
         
         try {
-            dispatch(registerAction(
+            await dispatch(registerAction(
                 formData.firstName,
                 formData.lastName,
                 formData.address,
                 formData.username,
                 formData.email,
                 formData.password1
-            ))    
+            ))
+            toast.success('successfully signuped, now sign in !!')
+            history.push('/users/sign-in')
+                
         } catch (error) {
             console.log(error)
+            toast.error('username or email already in use!!')
         }
     }
 
