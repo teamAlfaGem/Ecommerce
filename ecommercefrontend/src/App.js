@@ -10,6 +10,7 @@ import SignUp from './pages/Users/SignUp/SignUp'
 import Profile from './pages/Users/Profile/Profile'
 import SingleProductInfo from './pages/SingleProductInfo/SingleProductInfo'
 import Products from './pages/Products/Products'
+import AdminHome from './pages/Admin/AdminHome/AdminHome'
 
 import Error from './components/Error/Error'
 
@@ -35,6 +36,15 @@ function App() {
       <Router>
         <Switch>
           
+          <Route path="/admin/:path" exact>
+            <AdminLayout>
+              <Switch>
+                <Route exact path="/admin/home"  component={AdminHome}/>
+                <Route component={Error} />
+                  
+              </Switch>
+            </AdminLayout>
+          </Route>
 
           <Route path="/users/:path" exact>
             <UsersLayout>
@@ -47,13 +57,6 @@ function App() {
             </UsersLayout>
           </Route>
 
-          <Route path="/admin/:path" exact>
-            <AdminLayout>
-              <Switch>
-                  
-              </Switch>
-            </AdminLayout>
-          </Route>
 
           <Route path="/">
             <PageLayout>
