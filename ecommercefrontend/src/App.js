@@ -15,6 +15,7 @@ import Error from './components/Error/Error'
 
 import PageLayout from './Layouts/PageLayout'
 import UsersLayout from './Layouts/UsersLayout'
+import AdminLayout from './Layouts/AdminLayout'
 
 function App() {
   return (
@@ -44,6 +45,14 @@ function App() {
                 <Route component={Error} />
               </Switch>
             </UsersLayout>
+          </Route>
+
+          <Route path="/admin/:path" exact>
+            <AdminLayout>
+              <Switch>
+                  
+              </Switch>
+            </AdminLayout>
           </Route>
 
           <Route path="/">
