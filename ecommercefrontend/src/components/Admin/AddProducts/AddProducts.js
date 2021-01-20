@@ -6,8 +6,7 @@ import Button from 'react-bootstrap/Button'
 const AddProducts = () => {
     return (
         <div>
-            AddProducts
-            <Form>
+            <Form className="w-25">
                 <Form.Group>
                     <Form.Label>Product Name</Form.Label>
                     <Form.Control type="text" />
@@ -36,7 +35,7 @@ const AddProducts = () => {
                 
                 <Form.Group >
                     <Form.Label>Description</Form.Label>
-                    <Form.Control as="textarea" rows={3} />
+                    <Form.Control as="textarea" rows={2} />
                 </Form.Group>
                 
                 <Form.Group>
