@@ -1,13 +1,20 @@
 import React from 'react'
 
-import AdminNavBar from '../components/AdminNavBar/AdminNavBar'
+import AdminNavbar from '../components/AdminNavbar/AdminNavbar'
+
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const AdminLayout = (props) => {
     return (
-        <div>
-            <AdminNavBar/>
-            {props.children}
-        </div>
+        <Row>
+            <AdminNavbar/>
+            
+            <Col>
+                {props.children}
+            </Col>
+            
+        </Row>
     )
 }
 

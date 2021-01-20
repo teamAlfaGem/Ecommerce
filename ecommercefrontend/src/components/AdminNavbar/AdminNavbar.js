@@ -1,13 +1,16 @@
 import React from 'react'
 
-import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col'
+import Nav from 'react-bootstrap/Nav'
 
-const AdminHeader = () => {
+const AdminNavbar = () => {
     return (
-        <Container className="bg-dark text-white text-center" fluid >
-            <h1 className="display-3"><span style={{ fontFamily: 'Hanalei Fill'}}>E-Shop Admin</span></h1>
-        </Container>
+        <Col md={2} className="bg-light">
+           <Nav.Link href="#">Products</Nav.Link>
+           <Nav.Link href="#">Products</Nav.Link>
+           <Nav.Link href="#">Products</Nav.Link>
+        </Col>
     )
 }
 
-export default AdminHeader
+export default AdminNavbar
