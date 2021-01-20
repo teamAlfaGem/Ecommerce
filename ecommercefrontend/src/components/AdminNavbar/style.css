@@ -15,3 +15,14 @@
     padding-left: 30px;
     font-size: 20px;; 
 }
+
+.menu .link, .menu h1 {
+    padding-top: 15px;
+}
+
+.admin-logo{
+    color: white;
+    padding-left: 30px;
+    font-size: 35px;
+    font-family: 'Hanalei Fill', cursive;
+}

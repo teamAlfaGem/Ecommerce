@@ -3,14 +3,19 @@ import React from 'react'
 import Col from 'react-bootstrap/Col'
 import Nav from 'react-bootstrap/Nav'
 
+
+import './style.css'
+
 const AdminNavbar = () => {
     return (
-        <Col md={2} className="bg-light">
-           <Nav.Link href="#">Products</Nav.Link>
-           <Nav.Link href="#">Products</Nav.Link>
-           <Nav.Link href="#">Products</Nav.Link>
+        <Col md={2} className="menu d-flex flex-column">
+            <h1 className="admin-logo">E-Shop</h1>
+           <Nav.Link className="link" href="#">Home</Nav.Link>
+           <Nav.Link className="link" href="#">Products</Nav.Link>
+           <Nav.Link className="link" href="#">Orders</Nav.Link>
         </Col>
     )
 }
 
 export default AdminNavbar
+
