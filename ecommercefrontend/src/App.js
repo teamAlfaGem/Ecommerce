@@ -11,6 +11,8 @@ import Profile from './pages/Users/Profile/Profile'
 import SingleProductInfo from './pages/SingleProductInfo/SingleProductInfo'
 import Products from './pages/Products/Products'
 import AdminHome from './pages/Admin/AdminHome/AdminHome'
+import AdminProducts from './pages/Admin/AdminProducts/AdminProducts'
+import AdminOrders from './pages/Admin/AdminOrders/AdminOrders'
 
 import Error from './components/Error/Error'
 
@@ -40,6 +42,8 @@ function App() {
             <AdminLayout>
               <Switch>
                 <Route exact path="/admin/home"  component={AdminHome}/>
+                <Route exact path="/admin/products"  component={AdminProducts}/>
+                <Route exact path="/admin/orders"  component={AdminOrders}/>
                 <Route component={Error} />
                   
               </Switch>
