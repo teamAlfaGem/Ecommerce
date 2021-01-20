@@ -1,11 +1,11 @@
 import React from 'react'
 
-import AdminHeader from '../components/AdminHeader/AdminHeader'
+import AdminNavBar from '../components/AdminNavBar/AdminNavBar'
 
 const AdminLayout = (props) => {
     return (
         <div>
-            <AdminHeader/>
+            <AdminNavBar/>
             {props.children}
         </div>
     )
