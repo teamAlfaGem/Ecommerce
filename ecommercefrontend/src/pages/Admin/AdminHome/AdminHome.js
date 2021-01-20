@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AddProducts from '../../../components/AddProducts/AddProducts'
+import AddProducts from '../../../components/Admin/AddProducts/AddProducts'
 
 const Home = () => {
     return (

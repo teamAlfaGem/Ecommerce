@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AdminNavbar from '../components/AdminNavbar/AdminNavbar'
+import AdminNavbar from '../components/Admin/AdminNavbar/AdminNavbar'
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
