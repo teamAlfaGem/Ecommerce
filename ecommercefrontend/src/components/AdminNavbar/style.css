@@ -1,0 +1,17 @@
+:root{
+    --primary: #28B58F;
+    --secondary: #36F5C2;
+}
+
+
+.menu {
+    height: 100vh;
+    background-color: var(--primary);
+    float: left;
+}
+
+.menu a, .menu p{
+    color: white;
+    padding-left: 30px;
+    font-size: 20px;; 
+}
