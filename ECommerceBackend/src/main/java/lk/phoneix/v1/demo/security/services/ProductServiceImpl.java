@@ -58,7 +58,7 @@ public class ProductServiceImpl implements ProductServiceRepo {
     }
 
     @Override
-    public void saveProduct(MultipartFile file,Product product) {
+    public String saveProduct(MultipartFile file,Product product) {
 
         String originalFileName= StringUtils.cleanPath(file.getOriginalFilename());
         String fileName="";
@@ -89,6 +89,7 @@ public class ProductServiceImpl implements ProductServiceRepo {
                     productRepository.save(newProduct);
                 }
             }
+            return fileName;
         }catch (IOException ex){
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
         }

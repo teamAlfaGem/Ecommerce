@@ -14,7 +14,7 @@ public interface ProductServiceRepo {
 
     void deleteProduct(Long productId);
 
-    void saveProduct(MultipartFile file, Product product);
+    String saveProduct(MultipartFile file, Product product);
 
     void updateProduct(Product product);
 
