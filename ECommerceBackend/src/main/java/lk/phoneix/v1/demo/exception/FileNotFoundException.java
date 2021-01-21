@@ -1,4 +1,4 @@
 package lk.phoneix.v1.demo.exception;
 
-public class FileNotFoundException {
+public class FileNotFoundException extends RuntimeException{
 }

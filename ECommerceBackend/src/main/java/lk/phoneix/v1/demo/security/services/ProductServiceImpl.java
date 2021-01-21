@@ -5,12 +5,16 @@ import lk.phoneix.v1.demo.models.Product;
 import lk.phoneix.v1.demo.repository.ProductRepository;
 import lk.phoneix.v1.demo.security.services.repos.ProductServiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -25,6 +29,7 @@ public class ProductServiceImpl implements ProductServiceRepo {
 
     @Autowired
     private ProductRepository productRepository;
+
     @Autowired
     public ProductServiceImpl(Product product){
         this.fileStorageLocation= Paths.get(product.getUploadDir()).toAbsolutePath().normalize();
@@ -54,6 +59,7 @@ public class ProductServiceImpl implements ProductServiceRepo {
 
     @Override
     public void saveProduct(MultipartFile file,Product product) {
+
         String originalFileName= StringUtils.cleanPath(file.getOriginalFilename());
         String fileName="";
         try {
@@ -66,19 +72,22 @@ public class ProductServiceImpl implements ProductServiceRepo {
             }catch (Exception e){
                 fileExtension="";
             }
-            fileName=product.getPname()+"_"+fileExtension;
+            fileName=product.getPname()+"_"+product.getBrand()+"_"+fileExtension;
             Path targetLocation=this.fileStorageLocation.resolve(fileName);
             Files.copy(file.getInputStream(),targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
-            Product productImg=productRepository.checkImageByProductName(product.getPname());
+            List<Product> products=productRepository.checkImageByProductName(product.getPname());
 
-            if (productImg!=null){
-                productImg.setImageName(fileName);
-                productRepository.save(productImg);
-            }else {
-                Product newProduct=new Product();
-                newProduct.setImageName(fileName);
-                productRepository.save(newProduct);
+            for (Product productImg:products) {
+
+                if (productImg != null) {
+                    productImg.setImageName(fileName);
+                    productRepository.save(productImg);
+                } else {
+                    Product newProduct = new Product();
+                    newProduct.setImageName(fileName);
+                    productRepository.save(newProduct);
+                }
             }
         }catch (IOException ex){
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
@@ -100,6 +109,37 @@ public class ProductServiceImpl implements ProductServiceRepo {
     public List<Product> findProductByKeywords(String keyword) {
         List<Product>products=productRepository.getProductByKeywords(keyword);
         return products;
+    }
+
+    @Override
+    public List<Product> findProductByProductName(String pname)  {
+        List<Product>products=productRepository.getUploadProduct(pname);
+        return products;
+    }
+
+    @Override
+    public Resource loadFileAsResource(String fileName) throws Exception{
+        try {
+            Path filePath=this.fileStorageLocation.resolve(fileName).normalize();
+            Resource resource=new UrlResource(filePath.toUri());
+            if(resource.exists()){
+                return resource;
+            }else {
+                throw new FileNotFoundException("File not found " + fileName);
+            }
+        } catch (MalformedURLException e) {
+            throw new FileNotFoundException("File not found " + fileName);
+        }
+    }
+
+    @Override
+    public String getUploadFileName(String pname) {
+        return productRepository.getUploadFilePath(pname);
+    }
+
+    @Override
+    public List<Resource> loadFilesAsResources() {
+        return null;
     }
 
 }
