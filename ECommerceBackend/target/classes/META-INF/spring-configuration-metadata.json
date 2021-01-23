@@ -1,0 +1,67 @@
+{
+  "groups": [
+    {
+      "name": "file",
+      "type": "lk.phoneix.v1.demo.models.Product",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    }
+  ],
+  "properties": [
+    {
+      "name": "file.brand",
+      "type": "java.lang.String",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.carts",
+      "type": "java.util.List<lk.phoneix.v1.demo.models.Cart>",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.category",
+      "type": "java.lang.String",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.description",
+      "type": "java.lang.String",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.id",
+      "type": "java.lang.Long",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.image-name",
+      "type": "java.lang.String",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.key-words",
+      "type": "java.lang.String",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.pname",
+      "type": "java.lang.String",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.price",
+      "type": "java.lang.Double",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.product-orders",
+      "type": "java.util.List<lk.phoneix.v1.demo.models.Product_Orders>",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.upload-dir",
+      "type": "java.lang.String",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    }
+  ],
+  "hints": []
+}

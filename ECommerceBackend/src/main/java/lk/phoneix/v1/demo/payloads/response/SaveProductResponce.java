@@ -1,18 +1,7 @@
-package lk.phoneix.v1.demo.models;
+package lk.phoneix.v1.demo.payloads.response;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+public class SaveProductResponce {
 
-import java.util.*;
-import javax.persistence.*;
-
-@Component
-@ConfigurationProperties(prefix = "file")
-@Entity
-public class Product {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
     private String pname;
     private String brand;
     private String category;
@@ -21,18 +10,10 @@ public class Product {
     private String imageName;
     private String uploadDir;
     private String keyWords;
+    private String imgDownloadUri;
+    private long size;
 
-    @OneToMany(mappedBy="product")
-    private List<Cart> carts=new ArrayList<>();
-
-    @OneToMany(mappedBy="product")
-    private List<Product_Orders> productOrders=new ArrayList<>();
-
-
-    public Product() {
-    }
-
-    public Product(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keyWords, List<Cart> carts, List<Product_Orders> productOrders) {
+    public SaveProductResponce(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keyWords, String imgDownloadUri, long size) {
         this.pname = pname;
         this.brand = brand;
         this.category = category;
@@ -41,24 +22,8 @@ public class Product {
         this.imageName = imageName;
         this.uploadDir = uploadDir;
         this.keyWords = keyWords;
-        this.carts = carts;
-        this.productOrders = productOrders;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+        this.imgDownloadUri = imgDownloadUri;
+        this.size = size;
     }
 
     public String getPname() {
@@ -75,6 +40,14 @@ public class Product {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public double getPrice() {
@@ -117,19 +90,19 @@ public class Product {
         this.keyWords = keyWords;
     }
 
-    public List<Cart> getCarts() {
-        return carts;
+    public String getImgDownloadUri() {
+        return imgDownloadUri;
     }
 
-    public void setCarts(List<Cart> carts) {
-        this.carts = carts;
+    public void setImgDownloadUri(String imgDownloadUri) {
+        this.imgDownloadUri = imgDownloadUri;
     }
 
-    public List<Product_Orders> getProductOrders() {
-        return productOrders;
+    public long getSize() {
+        return size;
     }
 
-    public void setProductOrders(List<Product_Orders> productOrders) {
-        this.productOrders = productOrders;
+    public void setSize(long size) {
+        this.size = size;
     }
 }
