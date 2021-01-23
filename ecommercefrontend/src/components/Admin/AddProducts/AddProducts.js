@@ -26,9 +26,25 @@ const AddProducts = () => {
         setProduct(product => ( { ...product, file: e.target.files[0] } ))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         console.log(product)
         e.preventDefault();
+
+        let formData = new FormData();
+
+        formData.append('file', product.file, product.file.name)
+        formData.append('pname', product.pname)
+        formData.append('brand', product.brand)
+        formData.append('price', product.price)
+        formData.append('description', product.description)
+        formData.append('keywords', product.keywords)
+
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_PRODUCT}/saveproduct`, formData)
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
         
     }
 
