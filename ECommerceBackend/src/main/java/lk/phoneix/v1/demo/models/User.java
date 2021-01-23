@@ -1,5 +1,7 @@
 package lk.phoneix.v1.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.*;
 import javax.validation.constraints.Email;
@@ -35,9 +37,11 @@ public class User {
 
     private String address;
 
+    @JsonManagedReference
     @OneToMany(mappedBy="user")
     private List<Purchased> purchaseds=new ArrayList<>();
 
+    @JsonManagedReference
     @OneToMany(mappedBy="user")
     private List<Cart> carts=new ArrayList<>();
 

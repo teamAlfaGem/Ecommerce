@@ -4,6 +4,7 @@ import lk.phoneix.v1.demo.models.Product;
 import lk.phoneix.v1.demo.payloads.response.SaveProductResponce;
 import lk.phoneix.v1.demo.security.services.repos.ProductServiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -41,6 +42,10 @@ public class ProductController {
                 .toUriString();
         return new SaveProductResponce(product.getPname(),product.getBrand(),product.getCategory(),product.getPrice(),product.getDescription(),productImageName,product.getUploadDir(),product.getKeyWords(),imgDowloadUri, file.getSize());
     }
+
+//    public List<Resource> getProducts(){
+//
+//    }
 
 
 

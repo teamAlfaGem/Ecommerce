@@ -1,5 +1,6 @@
 package lk.phoneix.v1.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -22,9 +23,11 @@ public class Product {
     private String uploadDir;
     private String keyWords;
 
+    @JsonManagedReference
     @OneToMany(mappedBy="product")
     private List<Cart> carts=new ArrayList<>();
 
+    @JsonManagedReference
     @OneToMany(mappedBy="product")
     private List<Product_Orders> productOrders=new ArrayList<>();
 

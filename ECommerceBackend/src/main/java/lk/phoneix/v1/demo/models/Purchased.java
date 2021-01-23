@@ -1,5 +1,8 @@
 package lk.phoneix.v1.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -30,10 +33,12 @@ public class Purchased {
     private int amount;
     private int cvv;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "userId",referencedColumnName = "id")
     private User user;
 
+    @JsonManagedReference
     @OneToMany(mappedBy="purchased")
     private List<Product_Orders> productOrders=new ArrayList<>();
 

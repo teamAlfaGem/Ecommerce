@@ -1,5 +1,7 @@
 package lk.phoneix.v1.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,9 +12,11 @@ public class Cart {
     private Long id;
     private int qty;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="userId", referencedColumnName="id")
     private User user;
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="productId", referencedColumnName="id")
     private Product product;
