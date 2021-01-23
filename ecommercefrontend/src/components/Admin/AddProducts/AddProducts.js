@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -11,7 +12,7 @@ const AddProducts = () => {
         price: 0,
         description: "",
         keywords: "",
-        image: null
+        file: null
     }) 
 
     const handleChange = (e) => {
@@ -22,12 +23,28 @@ const AddProducts = () => {
 
     const handleFileChange = (e) => {
         console.log(e.target.files[0])
-        setProduct(product => ( { ...product, image: e.target.files[0] } ))
+        setProduct(product => ( { ...product, file: e.target.files[0] } ))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         console.log(product)
         e.preventDefault();
+
+        let formData = new FormData();
+
+        formData.append('file', product.file, product.file.name)
+        formData.append('pname', product.pname)
+        formData.append('brand', product.brand)
+        formData.append('price', product.price)
+        formData.append('description', product.description)
+        formData.append('keywords', product.keywords)
+
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_PRODUCT}/saveproduct`, formData)
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
         
     }
 
@@ -42,11 +59,12 @@ const AddProducts = () => {
                 <Form.Group>
                     <Form.Label>Category</Form.Label>
                     <Form.Control as="select" onChange={handleChange} name="category" >
-                    <option value="phones">Phones</option>
-                    <option value="laptops">Laptops</option>
-                    <option value="pen-drives">Pen drives</option>
-                    <option value="tv">Tv</option>
-                    <option value="consoles">Consoles</option>
+                        <option >None</option>
+                        <option value="phones">Phones</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="pen-drives">Pen drives</option>
+                        <option value="tv">Tv</option>
+                        <option value="consoles">Consoles</option>
                     </Form.Control>
                 </Form.Group>
                 
