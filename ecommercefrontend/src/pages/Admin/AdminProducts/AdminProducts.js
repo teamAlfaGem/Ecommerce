@@ -19,7 +19,7 @@ const AdminProducts = () => {
                 <h1>Products</h1>
                 
                     <button className="addProductBtn"  onClick={() => setModalShow(true)} >
-                        Add Products&nbsp;&nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
+                        Add Products&nbsp;&nbsp;<i className="fa fa-plus" aria-hidden="true"></i>
                     </button>
             
                 <AddProductsModal  show={modalShow} onHide={hideModal}/>
