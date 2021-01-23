@@ -28,7 +28,7 @@ const NavBar = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+                <Dropdown.Item href="users/profile">Profile</Dropdown.Item>
                 <Dropdown.Item onClick={() => {
                     dispatch(logoutAction())
                     window.location.reload()

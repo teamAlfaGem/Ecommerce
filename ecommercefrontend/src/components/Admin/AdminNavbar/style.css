@@ -1,0 +1,26 @@
+:root{
+    --primary: #28B58F;
+    --secondary: #36F5C2;
+}
+
+
+.menu {
+    background-color: var(--primary);
+    float: left;
+    height: 100vh;
+}
+
+.menu a, .menu p{
+    color: white;
+    font-size: 20px;; 
+}
+
+.menu .link, .menu h1 {
+    padding-top: 15px;
+}
+
+.admin-logo{
+    color: white;
+    font-size: 35px;
+    font-family: 'Hanalei Fill', cursive;
+}

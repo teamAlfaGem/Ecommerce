@@ -1,0 +1,21 @@
+:root{
+    --primary: #28B58F;
+    --secondary: #36F5C2;
+}
+.addProductBtn {
+    position: absolute;
+    height: fit-content;
+    color: white;
+    padding: 5px 9px;
+    font-size: 18px;
+    top: 10px;
+    right: 40px;
+    border-radius: 15px;
+    background-color: var(--primary);
+    border: none;
+}
+
+.addProductBtn:hover {
+    background-color: var(--primary);
+    opacity: 0.8;
+}

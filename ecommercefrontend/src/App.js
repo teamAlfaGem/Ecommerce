@@ -10,11 +10,15 @@ import SignUp from './pages/Users/SignUp/SignUp'
 import Profile from './pages/Users/Profile/Profile'
 import SingleProductInfo from './pages/SingleProductInfo/SingleProductInfo'
 import Products from './pages/Products/Products'
+import AdminHome from './pages/Admin/AdminHome/AdminHome'
+import AdminProducts from './pages/Admin/AdminProducts/AdminProducts'
+import AdminOrders from './pages/Admin/AdminOrders/AdminOrders'
 
 import Error from './components/Error/Error'
 
 import PageLayout from './Layouts/PageLayout'
 import UsersLayout from './Layouts/UsersLayout'
+import AdminLayout from './Layouts/AdminLayout'
 
 function App() {
   return (
@@ -34,6 +38,17 @@ function App() {
       <Router>
         <Switch>
           
+          <Route path="/admin/:path" exact>
+            <AdminLayout>
+              <Switch>
+                <Route exact path="/admin/home"  component={AdminHome}/>
+                <Route exact path="/admin/products"  component={AdminProducts}/>
+                <Route exact path="/admin/orders"  component={AdminOrders}/>
+                <Route component={Error} />
+                  
+              </Switch>
+            </AdminLayout>
+          </Route>
 
           <Route path="/users/:path" exact>
             <UsersLayout>
@@ -45,6 +60,7 @@ function App() {
               </Switch>
             </UsersLayout>
           </Route>
+
 
           <Route path="/">
             <PageLayout>

@@ -33,24 +33,32 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         console.log(formData)
-        
-        try {
-            await dispatch(registerAction(
-                formData.firstName,
-                formData.lastName,
-                formData.address,
-                formData.username,
-                formData.email,
-                formData.password1
-            ))
-            toast.success('successfully signuped, now sign in !!')
-            history.push('/users/sign-in')
-                
-        } catch (error) {
-            console.log(error)
-            toast.error('username or email already in use!!')
+        if (formData.password1 !== formData.password2){
+            toast.error("passwords don't match! " )
+        }
+        else if (formData.password1.length <= 6){
+            toast.error("password should have more than 6 characters ")
+        }
+        else {
+            try {
+                await dispatch(registerAction(
+                    formData.firstName,
+                    formData.lastName,
+                    formData.address,
+                    formData.username,
+                    formData.email,
+                    formData.password1
+                ))
+                toast.success('successfully signuped, now sign in !!')
+                history.push('/users/sign-in')
+                    
+            } catch (error) {
+                console.log(error)
+                toast.error('username or email already in use!!')
+            }
         }
     }
+
 
 
     return (
