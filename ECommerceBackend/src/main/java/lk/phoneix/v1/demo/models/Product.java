@@ -35,6 +35,17 @@ public class Product {
     public Product() {
     }
 
+    public Product(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keyWords) {
+        this.pname = pname;
+        this.brand = brand;
+        this.category = category;
+        this.price = price;
+        this.description = description;
+        this.imageName = imageName;
+        this.uploadDir = uploadDir;
+        this.keyWords = keyWords;
+    }
+
     public Product(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keyWords, List<Cart> carts, List<Product_Orders> productOrders) {
         this.pname = pname;
         this.brand = brand;

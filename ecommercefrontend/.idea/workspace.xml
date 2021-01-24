@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4781d2a5-e292-4228-ab45-1714f7c371ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/controllers/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/repository/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/repository/CartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/CartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/repos/CartServiceRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/repos/CartServiceRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/payloads/request/SaveProductRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/repos/ProductServiceRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/repos/ProductServiceRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/DemoApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/controllers/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/controllers/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Product_Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Product_Orders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Purchased.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Purchased.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AddProducts/AddProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AddProducts/AddProducts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +38,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../tutorials/angular-11-spring-boot-jwt-authentication/angular-11-client" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,6 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1610852462698</updated>
       <workItem from="1610852464016" duration="517000" />
+      <workItem from="1611400255976" duration="9117000" />
+      <workItem from="1611465149156" duration="4217000" />
     </task>
     <servers />
   </component>

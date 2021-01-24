@@ -2,6 +2,7 @@ package lk.phoneix.v1.demo.security.services;
 
 import lk.phoneix.v1.demo.exception.FileStorageException;
 import lk.phoneix.v1.demo.models.Product;
+import lk.phoneix.v1.demo.payloads.request.SaveProductRequest;
 import lk.phoneix.v1.demo.repository.ProductRepository;
 import lk.phoneix.v1.demo.security.services.repos.ProductServiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,7 +59,7 @@ public class ProductServiceImpl implements ProductServiceRepo {
     }
 
     @Override
-    public String saveProduct(MultipartFile file,Product product) {
+    public String saveProduct(MultipartFile file, Product product) {
 
         String originalFileName= StringUtils.cleanPath(file.getOriginalFilename());
         String fileName="";
@@ -75,11 +76,11 @@ public class ProductServiceImpl implements ProductServiceRepo {
             fileName=product.getPname()+"_"+product.getBrand()+"_"+fileExtension;
             Path targetLocation=this.fileStorageLocation.resolve(fileName);
             Files.copy(file.getInputStream(),targetLocation, StandardCopyOption.REPLACE_EXISTING);
-
+            System.out.println("Got image to save");
             List<Product> products=productRepository.checkImageByProductName(product.getPname());
 
             for (Product productImg:products) {
-
+                System.out.println("Got image");
                 if (productImg != null) {
                     productImg.setImageName(fileName);
                     productRepository.save(productImg);

@@ -1,6 +1,7 @@
 package lk.phoneix.v1.demo.security.services.repos;
 
 import lk.phoneix.v1.demo.models.Product;
+import lk.phoneix.v1.demo.payloads.request.SaveProductRequest;
 import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 

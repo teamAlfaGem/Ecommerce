@@ -4,6 +4,8 @@ import axios from 'axios'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+import authHeader from '../../../services/auth-header'
+
 const AddProducts = () => {
     const [product, setProduct] = useState({
         pname: "",
@@ -11,20 +13,24 @@ const AddProducts = () => {
         brand: "",
         price: 0,
         description: "",
+        imageName: "",
+        uploadDir: "",
         keywords: "",
         file: null
-    }) 
+    })
 
     const handleChange = (e) => {
-       
+
         setProduct(product => ( { ...product, [e.target.name]: e.target.value } ))
-        
+
     }
 
     const handleFileChange = (e) => {
         console.log(e.target.files[0])
         setProduct(product => ( { ...product, file: e.target.files[0] } ))
     }
+
+
 
     const handleSubmit = async (e) => {
         console.log(product)
@@ -33,11 +39,21 @@ const AddProducts = () => {
         let formData = new FormData();
 
         formData.append('file', product.file, product.file.name)
+        formData.append('file', product.file)
         formData.append('pname', product.pname)
+        formData.append('category',product.category)
         formData.append('brand', product.brand)
         formData.append('price', product.price)
         formData.append('description', product.description)
+        formData.append('imageName',product.imageName)
+        formData.append('uploadDir',product.uploadDir)
         formData.append('keywords', product.keywords)
+
+
+
+        // const axiosOptions = {
+        //     headers : authHeader()
+        // }
 
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_PRODUCT}/saveproduct`, formData)
@@ -45,7 +61,7 @@ const AddProducts = () => {
         } catch (error) {
             console.log(error)
         }
-        
+
     }
 
     return (
@@ -67,27 +83,27 @@ const AddProducts = () => {
                         <option value="consoles">Consoles</option>
                     </Form.Control>
                 </Form.Group>
-                
+
                 <Form.Group>
                     <Form.Label>Brand</Form.Label>
                     <Form.Control type="text" onChange={handleChange} name="brand" value={product.brand}/>
                 </Form.Group>
-                
+
                 <Form.Group>
                     <Form.Label>Price</Form.Label>
                     <Form.Control type="number" onChange={handleChange} name="price" value={product.price}/>
                 </Form.Group>
-                
+
                 <Form.Group >
                     <Form.Label>Description</Form.Label>
                     <Form.Control as="textarea" rows={2} onChange={handleChange} name="description" value={product.description}/>
                 </Form.Group>
-                
+
                 <Form.Group>
                     <Form.Label>Keywords</Form.Label>
                     <Form.Control type="text" onChange={handleChange} name="keywords" value={product.keywords}/>
                     <Form.Text className="text-muted mb-1">
-                        Keywords should be seperated with a space and a #                      
+                        Keywords should be seperated with a space and a #
                     </Form.Text>
                 </Form.Group>
 
