@@ -78,7 +78,9 @@ public class ProductServiceImpl implements ProductServiceRepo {
             Files.copy(file.getInputStream(),targetLocation, StandardCopyOption.REPLACE_EXISTING);
             System.out.println("Got image to save");
             List<Product> products=productRepository.checkImageByProductName(product.getPname());
-
+            System.out.println("working");
+            product.setImageName(fileName);
+            productRepository.save(product);
             for (Product productImg:products) {
                 System.out.println("Got image");
                 if (productImg != null) {

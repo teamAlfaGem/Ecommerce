@@ -37,7 +37,7 @@ public class ProductController {
 //    }
 
     @PostMapping("/saveproduct")
-    public SaveProductResponce saveProduct(@RequestParam("file") MultipartFile file,@RequestParam("pname") String pname,@RequestParam("category") String brand,@RequestParam("brand") String category,@RequestParam("price") double price,@RequestParam("description") String description,@RequestParam("imageName") String imageName,@RequestParam("uploadDir") String uploadDir,@RequestParam("keywords") String keyWords){
+    public SaveProductResponce saveProduct(@RequestParam("file") MultipartFile file,@RequestParam("pname") String pname,@RequestParam("brand") String brand,@RequestParam("category") String category,@RequestParam("price") double price,@RequestParam("description") String description,@RequestParam("imageName") String imageName,@RequestParam("uploadDir") String uploadDir,@RequestParam("keywords") String keyWords){
         Product product=new Product(pname,brand,category,price,description,imageName,uploadDir,keyWords);
         String productImageName=productServiceRepo.saveProduct(file,product);
         String imgDowloadUri= ServletUriComponentsBuilder.fromCurrentContextPath()

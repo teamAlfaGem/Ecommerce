@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4781d2a5-e292-4228-ab45-1714f7c371ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AddProducts/AddProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AddProducts/AddProducts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/auth-header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth-header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/ProductServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
       <updated>1610852462698</updated>
       <workItem from="1610852464016" duration="517000" />
       <workItem from="1611400255976" duration="9117000" />
-      <workItem from="1611465149156" duration="4765000" />
+      <workItem from="1611465149156" duration="5565000" />
     </task>
     <servers />
   </component>
