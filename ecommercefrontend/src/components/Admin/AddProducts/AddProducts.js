@@ -4,8 +4,6 @@ import axios from 'axios'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-import authHeader from '../../../services/auth-header'
-
 const AddProducts = () => {
     const [product, setProduct] = useState({
         pname: "",
@@ -48,12 +46,6 @@ const AddProducts = () => {
         formData.append('imageName',product.imageName)
         formData.append('uploadDir',product.uploadDir)
         formData.append('keywords', product.keywords)
-
-
-
-        // const axiosOptions = {
-        //     headers : authHeader()
-        // }
 
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_PRODUCT}/saveproduct`, formData)
