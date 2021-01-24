@@ -4,6 +4,8 @@ import axios from 'axios'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+import authHeader from '../../../services/auth-header'
+
 const AddProducts = () => {
     const [product, setProduct] = useState({
         pname: "",
@@ -26,6 +28,8 @@ const AddProducts = () => {
         setProduct(product => ( { ...product, file: e.target.files[0] } ))
     }
 
+    
+
     const handleSubmit = async (e) => {
         console.log(product)
         e.preventDefault();
@@ -38,9 +42,15 @@ const AddProducts = () => {
         formData.append('price', product.price)
         formData.append('description', product.description)
         formData.append('keywords', product.keywords)
+        
+       
 
+        const axiosOptions = {
+            headers : authHeader()
+        }
+        
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_PRODUCT}/saveproduct`, formData)
+            const response = await axios.post(`${process.env.REACT_APP_API_PRODUCT}/saveproduct`, formData, axiosOptions)
             console.log(response)
         } catch (error) {
             console.log(error)
