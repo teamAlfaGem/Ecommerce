@@ -5,6 +5,7 @@ import AddProductsModal from '../../../components/Admin/AddProductsModal/AddProd
 import Row from 'react-bootstrap/Row'
 
 import './style.css'
+import AddProducts from './../../../components/Admin/AddProducts/AddProducts';
 
 const AdminProducts = () => {
     const [modalShow, setModalShow] = useState(false);
@@ -22,7 +23,7 @@ const AdminProducts = () => {
                         Add Products&nbsp;&nbsp;<i className="fa fa-plus" aria-hidden="true"></i>
                     </button>
             
-                <AddProductsModal  show={modalShow} onHide={hideModal}/>
+                <AddProductsModal  show={modalShow} onHide={hideModal} addproducts={<AddProducts/>}/>
             </Row>
 
         </div>
