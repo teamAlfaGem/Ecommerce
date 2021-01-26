@@ -8,7 +8,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 
-import style from './style'
+import './style.css'
 
 import { useDispatch } from 'react-redux';
 import { logoutAction } from '../../actions/auth'
@@ -17,13 +17,11 @@ import { logoutAction } from '../../actions/auth'
 const NavBar = () => {
     const dispatch = useDispatch()
     
-    const classes = style
-    
     const { username } = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : ""
 
     const contentIfUserIsLoggedIn = (
         <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic" style={classes.userDropdown}>
+            <Dropdown.Toggle variant="success" id="dropdown-basic userDropdown" >
                 <i className="fa fa-user" aria-hidden="true">{' '}</i>{'  '}{ username }
             </Dropdown.Toggle>
 
@@ -56,7 +54,7 @@ const NavBar = () => {
                             </NavDropdown>
                             <Nav.Link href="/cart">
                                 Cart{" "}
-                                <i className="fa fa-shopping-cart" aria-hidden="true" style={classes.cart}></i>
+                                <i className="fa fa-shopping-cart cart" aria-hidden="true"></i>
                             </Nav.Link>
                             <Form inline >
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
