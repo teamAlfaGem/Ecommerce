@@ -17,7 +17,7 @@ import { logoutAction } from '../../actions/auth'
 const NavBar = () => {
     const dispatch = useDispatch()
     
-    const { username } = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : ""
+    const { username } = sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')) : ""
 
     const contentIfUserIsLoggedIn = (
         <Dropdown>
@@ -54,7 +54,7 @@ const NavBar = () => {
                             </NavDropdown>
                             <Nav.Link href="/cart">
                                 Cart{" "}
-                                <i className="fa fa-shopping-cart cart" aria-hidden="true"></i>
+                                <i id="cart" className="fa fa-shopping-cart" aria-hidden="true"></i>
                             </Nav.Link>
                             <Form inline >
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -73,3 +73,4 @@ const NavBar = () => {
 
 export default NavBar
  
+                               

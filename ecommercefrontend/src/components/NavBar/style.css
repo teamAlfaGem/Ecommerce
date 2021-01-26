@@ -1,5 +1,5 @@
-.cart {
-    color: 'red';
+#cart {
+    color: red;
     font-size: 20px;
     margin-right: 10px;
 }

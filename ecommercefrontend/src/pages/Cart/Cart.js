@@ -11,7 +11,7 @@ const Cart = () => {
     return (
         <Container className="mt-2">
             <Row className="d-flex flex-row-reverse justify-content-between">
-                <Button variant="success" className="mt-3 px-5 ">Buy</Button>
+                <Button variant="success" className="mt-3 px-5">Buy</Button>
                 <h1>Total Price: </h1>
             </Row>
             

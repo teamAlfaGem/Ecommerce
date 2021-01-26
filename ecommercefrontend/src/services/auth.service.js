@@ -6,7 +6,7 @@ export const login = async (username, password) => {
     const response = await axios.post(`${process.env.REACT_APP_API_AUTH}/signin`, {username, password})
 
     if(response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data))
+        sessionStorage.setItem("user", JSON.stringify(response.data))
     }
 
     console.log(response)
@@ -14,7 +14,7 @@ export const login = async (username, password) => {
     }
 
 export const logout = () => {
-    localStorage.removeItem("user")
+    sessionStorage.removeItem("user")
 }
 
 export const register = async (firstName, lastName, address, username, email, password) => {
