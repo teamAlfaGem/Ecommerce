@@ -24,3 +24,7 @@
     font-size: 35px;
     font-family: 'Hanalei Fill', cursive;
 }
+
+.logo-border{
+    border-bottom: 3px solid white;
+}
