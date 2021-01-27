@@ -73,7 +73,7 @@ public class ProductServiceImpl implements ProductServiceRepo {
             }catch (Exception e){
                 fileExtension="";
             }
-            fileName=product.getPname()+"_"+product.getBrand()+"_"+fileExtension;
+            fileName=product.getPname()+"_"+product.getBrand()+"_"+product.getCategory()+"_"+fileExtension;
             Path targetLocation=this.fileStorageLocation.resolve(fileName);
             Files.copy(file.getInputStream(),targetLocation, StandardCopyOption.REPLACE_EXISTING);
             System.out.println("Got image to save");

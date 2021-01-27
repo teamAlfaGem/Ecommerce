@@ -33,11 +33,11 @@ public class ProductController {
         return productServiceRepo.findAllProducts();
     }
 
-    @GetMapping("/{category}")
+    @GetMapping("/category/{category}")
     public List<Product>findProductByCategory(@PathVariable("category") String category){
         return productServiceRepo.findProductByCategory(category);
     }
-    @GetMapping("/{keyword}")
+    @GetMapping("/keyword/{keyword}")
     public List<Product>findProductByKeywords(@PathVariable("keyword") String keyword){
         return productServiceRepo.findProductByKeywords(keyword);
     }
