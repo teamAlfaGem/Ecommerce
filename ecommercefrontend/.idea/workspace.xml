@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4781d2a5-e292-4228-ab45-1714f7c371ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/security/services/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/controllers/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/controllers/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +57,7 @@
       <updated>1610852462698</updated>
       <workItem from="1610852464016" duration="517000" />
       <workItem from="1611400255976" duration="9117000" />
-      <workItem from="1611465149156" duration="5565000" />
+      <workItem from="1611465149156" duration="6165000" />
     </task>
     <servers />
   </component>

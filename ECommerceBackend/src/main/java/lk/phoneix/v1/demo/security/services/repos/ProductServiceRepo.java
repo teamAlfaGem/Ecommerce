@@ -25,5 +25,6 @@ public interface ProductServiceRepo {
     public Resource loadFileAsResource(String fileName) throws Exception;
     public String getUploadFileName(String pname);
     List<Resource> loadFilesAsResources();
+    Product getProductByName(String pname);
 
 }

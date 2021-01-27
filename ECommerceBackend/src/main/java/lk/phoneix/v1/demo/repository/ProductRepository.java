@@ -26,6 +26,9 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query(value = "select imageName from Product where pname=?1",nativeQuery = true)
     public String getUploadFilePath(String pname);
 
+    @Query("select a from Product a where a.pname = ?1")
+    public Product getProductByPname(String pname);
+
 
 
 }
