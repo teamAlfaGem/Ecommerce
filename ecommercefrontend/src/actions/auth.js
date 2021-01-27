@@ -15,17 +15,19 @@ export const registerAction = (firstname, lastname, address, username, email, pa
     });
   
 }
-        
 
+export const loginAction = (username, password) => (dispatch) => new Promise(async(resolve, reject) => {
+  
+    try {
+        const response = await login(username, password)
+        dispatch({ type: LOGIN_SUCCESS, payload: { user: response } });
+        resolve('success')
+    } catch (error) {
+        console.log(error);
+        reject(new Error(error));
+    }
+})
 
-export const loginAction = (username, password) => async (dispatch) => {
-    
-    
-    const response = await login(username, password)
-    
-    dispatch({type: LOGIN_SUCCESS, payload: { user: response} })
-    
-}
 
 export const logoutAction = () => (dispatch) => {
     logout()
