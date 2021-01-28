@@ -18,13 +18,16 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     public List<Product>getProductByKeywords(String keyword);
 
     @Query(value = "select * from Product where pname=?1",nativeQuery = true)
-    public List<Product> checkImageByProductName(String name);
+    public List<Product> checkImageByProductName(String pname);
 
     @Query(value = "select * from Product where pname=?1",nativeQuery = true)
     public List<Product> getUploadProduct(String pname);
 
     @Query(value = "select imageName from Product where pname=?1",nativeQuery = true)
     public String getUploadFilePath(String pname);
+
+    @Query("select a from Product a where a.pname = ?1")
+    public Product getProductByPname(String pname);
 
 
 

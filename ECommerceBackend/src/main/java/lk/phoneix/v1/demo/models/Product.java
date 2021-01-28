@@ -21,7 +21,7 @@ public class Product {
     private String description;
     private String imageName;
     private String uploadDir;
-    private String keyWords;
+    private String keywords;
 
     @JsonManagedReference
     @OneToMany(mappedBy="product")
@@ -35,7 +35,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keyWords) {
+    public Product(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keywords) {
         this.pname = pname;
         this.brand = brand;
         this.category = category;
@@ -43,10 +43,10 @@ public class Product {
         this.description = description;
         this.imageName = imageName;
         this.uploadDir = uploadDir;
-        this.keyWords = keyWords;
+        this.keywords = keywords;
     }
 
-    public Product(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keyWords, List<Cart> carts, List<Product_Orders> productOrders) {
+    public Product(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keywords, List<Cart> carts, List<Product_Orders> productOrders) {
         this.pname = pname;
         this.brand = brand;
         this.category = category;
@@ -54,7 +54,7 @@ public class Product {
         this.description = description;
         this.imageName = imageName;
         this.uploadDir = uploadDir;
-        this.keyWords = keyWords;
+        this.keywords = keywords;
         this.carts = carts;
         this.productOrders = productOrders;
     }
@@ -123,12 +123,12 @@ public class Product {
         this.uploadDir = uploadDir;
     }
 
-    public String getKeyWords() {
-        return keyWords;
+    public String getKeywords() {
+        return keywords;
     }
 
-    public void setKeyWords(String keyWords) {
-        this.keyWords = keyWords;
+    public void setKeywords(String keyWords) {
+        this.keywords = keywords;
     }
 
     public List<Cart> getCarts() {

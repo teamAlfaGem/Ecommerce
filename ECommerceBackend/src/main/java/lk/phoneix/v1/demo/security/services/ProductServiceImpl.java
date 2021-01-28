@@ -73,23 +73,14 @@ public class ProductServiceImpl implements ProductServiceRepo {
             }catch (Exception e){
                 fileExtension="";
             }
-            fileName=product.getPname()+"_"+product.getBrand()+"_"+fileExtension;
+            fileName=product.getPname()+"_"+product.getBrand()+"_"+product.getCategory()+"_"+fileExtension;
             Path targetLocation=this.fileStorageLocation.resolve(fileName);
             Files.copy(file.getInputStream(),targetLocation, StandardCopyOption.REPLACE_EXISTING);
             System.out.println("Got image to save");
             List<Product> products=productRepository.checkImageByProductName(product.getPname());
-
-            for (Product productImg:products) {
-                System.out.println("Got image");
-                if (productImg != null) {
-                    productImg.setImageName(fileName);
-                    productRepository.save(productImg);
-                } else {
-                    Product newProduct = new Product();
-                    newProduct.setImageName(fileName);
-                    productRepository.save(newProduct);
-                }
-            }
+            System.out.println("working");
+            product.setImageName(fileName);
+            productRepository.save(product);
             return fileName;
         }catch (IOException ex){
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
@@ -142,6 +133,11 @@ public class ProductServiceImpl implements ProductServiceRepo {
     @Override
     public List<Resource> loadFilesAsResources() {
         return null;
+    }
+
+    @Override
+    public Product getProductByName(String pname) {
+        return productRepository.getProductByPname(pname);
     }
 
 }

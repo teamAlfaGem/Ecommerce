@@ -38,7 +38,7 @@
       "sourceType": "lk.phoneix.v1.demo.models.Product"
     },
     {
-      "name": "file.key-words",
+      "name": "file.keywords",
       "type": "java.lang.String",
       "sourceType": "lk.phoneix.v1.demo.models.Product"
     },
