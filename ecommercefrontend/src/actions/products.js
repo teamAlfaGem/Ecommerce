@@ -6,14 +6,15 @@ export const getProducts = () => async (dispatch) => {
     
     try {
         const response = await axios.get(`${process.env.REACT_APP_API}/product`)
-        console.log(response)
+       
         await dispatch({
             type: GET_PRODUCTS,
-            payload: response
+            payload: response.data
         })
-        
+
     } catch (error) {
         console.log(error);
     }
 
+  
 }
