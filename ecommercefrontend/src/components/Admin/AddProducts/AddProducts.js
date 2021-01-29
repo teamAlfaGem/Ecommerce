@@ -49,11 +49,14 @@ const AddProducts = () => {
         formData.append('keywords', product.keywords)
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_PRODUCT}/saveproduct`, formData)
-            console.log(response)
+            await axios.post(`${process.env.REACT_APP_API}/product/saveproduct`, formData)
+
             toast.success('product added !!')
+
+            
         } catch (error) {
             console.log(error)
+            toast.error('Failed!')
         }
 
     }
