@@ -7,8 +7,10 @@ import SingleProduct from '../../components/SingleProduct/SingleProduct'
 
 const Products = (props) => {
 
-    const products = useSelector((state) => state.products)
+    let products = useSelector((state) => state.products)
 
+    products = props.match.params.id ? products.filter(product => product.category === props.match.params.id) : products
+    
     return (
         <div>
             {props.match.params.id}<br/>

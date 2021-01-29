@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 const SingleProduct = ({product}) => {
-    console.log(product)
+
     return (
         <div>
            <Card style={{ width: '18rem' }}>
