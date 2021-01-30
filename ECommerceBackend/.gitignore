@@ -2,3 +2,5 @@
 
 # dependencies
 src/main/resources/images
+*.jpg
+*.webp
