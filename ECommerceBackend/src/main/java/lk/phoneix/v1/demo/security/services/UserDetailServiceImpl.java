@@ -2,6 +2,7 @@ package lk.phoneix.v1.demo.security.services;
 
 import lk.phoneix.v1.demo.models.User;
 import lk.phoneix.v1.demo.repository.UserRepository;
+import lk.phoneix.v1.demo.security.services.repos.UserServiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Component
-public class UserDetailServiceImpl implements UserDetailsService {
+public class UserDetailServiceImpl implements UserDetailsService, UserServiceRepo {
 
     @Autowired
     UserRepository userRepository;
@@ -19,5 +20,10 @@ public class UserDetailServiceImpl implements UserDetailsService {
         User user=userRepository.findByUsername(username)
                 .orElseThrow(()->new UsernameNotFoundException("Username not found with username: "+ username));
         return UserDetailsImpl.build(user);
+    }
+
+    public User findById(long id){
+        User user=userRepository.findById(id).get();
+        return user;
     }
 }

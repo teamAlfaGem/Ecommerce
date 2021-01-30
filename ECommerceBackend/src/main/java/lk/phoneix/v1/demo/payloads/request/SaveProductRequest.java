@@ -13,17 +13,6 @@ public class SaveProductRequest {
     private String uploadDir;
     private String keyWords;
 
-    public SaveProductRequest(MultipartFile file, String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keyWords) {
-        this.file = file;
-        this.pname = pname;
-        this.brand = brand;
-        this.category = category;
-        this.price = price;
-        this.description = description;
-        this.imageName = imageName;
-        this.uploadDir = uploadDir;
-        this.keyWords = keyWords;
-    }
 
     public MultipartFile getFile() {
         return file;

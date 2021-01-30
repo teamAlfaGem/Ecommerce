@@ -4,9 +4,14 @@ import lk.phoneix.v1.demo.models.Cart;
 import lk.phoneix.v1.demo.repository.CartRepository;
 import lk.phoneix.v1.demo.security.services.repos.CartServiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
+@Component
+@Transactional
 public class CartServiceImpl implements CartServiceRepo {
 
     @Autowired
@@ -20,7 +25,8 @@ public class CartServiceImpl implements CartServiceRepo {
 
     @Override
     public Cart findCart(Long cartId) {
-        return null;
+        Cart cart=cartRepository.findById(cartId).get();
+        return cart;
     }
 
     @Override
@@ -29,8 +35,9 @@ public class CartServiceImpl implements CartServiceRepo {
     }
 
     @Override
-    public void saveCart(Cart cart) {
-        cartRepository.save(cart);
+    public Cart saveCart(Cart cart) {
+        Cart _cart=cartRepository.save(cart);
+        return _cart;
     }
 
     @Override

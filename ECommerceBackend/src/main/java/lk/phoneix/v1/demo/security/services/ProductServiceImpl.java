@@ -50,7 +50,8 @@ public class ProductServiceImpl implements ProductServiceRepo {
 
     @Override
     public Product findProduct(Long productId) {
-        return null;
+        Product product=productRepository.findById(productId).get();
+        return product;
     }
 
     @Override

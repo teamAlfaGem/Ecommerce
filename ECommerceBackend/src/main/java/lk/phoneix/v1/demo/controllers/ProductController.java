@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.*;
 
@@ -58,9 +59,23 @@ public class ProductController {
 
     }
 
-//    public List<Resource> getProducts(){
+//    @PostMapping("/saveproduct")
+//    public SaveProductResponce saveProduct(@Valid @RequestBody SaveProductRequest productRequest){
+//        Product product=new Product(productRequest.getPname(),productRequest.getBrand(),productRequest.getCategory(),productRequest.getPrice(),productRequest.getDescription(),productRequest.getImageName(),productRequest.getUploadDir(),productRequest.getKeyWords());
+//        String productImageName=productServiceRepo.saveProduct(productRequest.getFile(),product);
+//        String imgDowloadUri= ServletUriComponentsBuilder.fromCurrentContextPath()
+//                .path("/api/product/getproduct/")
+//                .path(productImageName)
+//                .toUriString();
+//        System.out.println(imgDowloadUri);
+//        Product productGet=productServiceRepo.getProductByName(productRequest.getPname());
+//        productGet.setUploadDir(imgDowloadUri);
+//        productRepository.save(productGet);
+//        return new SaveProductResponce(productRequest.getPname(),productRequest.getBrand(),productRequest.getCategory(),productRequest.getPrice(),productRequest.getDescription(),productImageName,productRequest.getUploadDir(),productRequest.getKeyWords(),imgDowloadUri, productRequest.getFile().getSize());
 //
 //    }
+
+
     @GetMapping("/getproduct/{imagename}")
     public ResponseEntity<Resource> getProduct(@PathVariable("imagename") String imagename, HttpServletRequest request){
         String contentType=null;

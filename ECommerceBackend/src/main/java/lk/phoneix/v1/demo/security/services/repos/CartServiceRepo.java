@@ -13,7 +13,7 @@ public interface CartServiceRepo {
 
     void deleteCart(Long cartId);
 
-    void saveCart(Cart cart);
+    Cart saveCart(Cart cart);
 
     void updateCart(Cart cart);
     public List<Cart> getCartByUserId(Long user_id);
