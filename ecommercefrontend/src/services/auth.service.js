@@ -2,19 +2,21 @@ import axios from 'axios'
 
 export const login = async (username, password) => {
 
-   
     const response = await axios.post(`${process.env.REACT_APP_API_AUTH}/signin`, {username, password})
 
+    console.log(response)
     if(response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data))
+        sessionStorage.setItem("user", JSON.stringify(response.data))
+        return response.data;
+    }
+    else {
+        return false;
     }
 
-    console.log(response)
-    return response.data;
-    }
+}
 
 export const logout = () => {
-    localStorage.removeItem("user")
+    sessionStorage.removeItem("user")
 }
 
 export const register = async (firstName, lastName, address, username, email, password) => {

@@ -1,7 +1,7 @@
 import './App.css';
+import React, { useEffect } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { ToastContainer } from "react-toastify";
-
 
 import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
@@ -20,7 +20,18 @@ import PageLayout from './Layouts/PageLayout'
 import UsersLayout from './Layouts/UsersLayout'
 import AdminLayout from './Layouts/AdminLayout'
 
+import { useDispatch} from 'react-redux'
+import { getProducts } from './actions/products'
+
 function App() {
+
+  const dispatch = useDispatch();
+  // console.log(dispatch())
+  useEffect(() => {
+    dispatch(getProducts())
+  }, [dispatch])
+    
+    
   return (
     <div>
       <ToastContainer
@@ -90,6 +101,7 @@ export default App;
           
           
         
+
 
 
 
