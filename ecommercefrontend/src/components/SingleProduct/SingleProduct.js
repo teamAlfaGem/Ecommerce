@@ -5,6 +5,10 @@ import Button from 'react-bootstrap/Button'
 
 const SingleProduct = ({product}) => {
 
+    const addToCart = () => {
+        
+    }
+
     return (
         <div>
            <Card style={{ width: '18rem' }}>
@@ -15,7 +19,11 @@ const SingleProduct = ({product}) => {
                     Price : {product.price}
                     
                     </Card.Text>
-                    <Button variant="danger" >Add to Cart</Button><Button variant="info" className="ml-2">View Product</Button>
+                    {sessionStorage.getItem('user') ? 
+                        (<Button variant="danger" >Add to Cart</Button>) : 
+                        ({}) }
+                    
+                    <Button variant="info" className="ml-2">View Product</Button>
                 </Card.Body>
                 </Card>
         </div>
