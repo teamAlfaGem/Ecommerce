@@ -22,13 +22,16 @@ import AdminLayout from './Layouts/AdminLayout'
 
 import { useDispatch} from 'react-redux'
 import { getProducts } from './actions/products'
+import { updateUserOnRefresh } from './actions/auth'
 
 function App() {
 
   const dispatch = useDispatch();
   // console.log(dispatch())
+  
   useEffect(() => {
     dispatch(getProducts())
+    dispatch(updateUserOnRefresh())
   }, [dispatch])
     
     

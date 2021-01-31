@@ -8,11 +8,14 @@ import SingleProductInCart from '../../components/SingleProductInCart/SingleProd
 
 
 const Cart = () => {
+    const getProductsFromCart = () => {
+
+    }
     return (
         <Container className="mt-2">
-            <Row className="d-flex flex-row-reverse justify-content-between">
-                <Button variant="success" className="mt-3 px-5">Buy</Button>
+            <Row className="d-flex flex-row justify-content-between">
                 <h1>Total Price: </h1>
+                <Button variant="success" className="mt-3 px-5">Buy</Button>
             </Row>
             
             <div className="d-flex flex-wrap flex-row ">
