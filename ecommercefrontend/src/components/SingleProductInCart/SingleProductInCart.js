@@ -4,16 +4,16 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 
-const SingleProductInCart = () => {
+const SingleProductInCart = ({product}) => {
     return (
         <div>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={product.img} />
                 <Card.Body className="">
-                    <Card.Title>Product Name</Card.Title>
+                    <Card.Title>{product.productName}</Card.Title>
                     <Card.Text>
-                    Price : $$<br/><br/>
-                    Qty:&nbsp; &nbsp; <Button variant="warning" size="sm">+</Button>&nbsp;1&nbsp;<Button variant="warning" size="sm">-</Button>
+                    Price : {product.price}<br/><br/>
+                    Qty:&nbsp; &nbsp; <Button variant="warning" size="sm">+</Button>&nbsp;{product.qty}&nbsp;<Button variant="warning" size="sm">-</Button>
                     </Card.Text>
                     <Button variant="dark" block>Remove from cart</Button>
                 </Card.Body>
