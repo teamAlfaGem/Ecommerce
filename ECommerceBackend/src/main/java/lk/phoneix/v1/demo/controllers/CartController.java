@@ -53,7 +53,8 @@ public class CartController {
         List<Cart>carts= cartServiceRepo.getCartByUserId(userId);
         List<CartResponse> cartResponses=new ArrayList<>();
         for (Cart cart:carts) {
-            CartResponse cartResponse=new CartResponse(cart.getId(), cart.getQty(),cart.getUser().getId(),cart.getProduct().getId());
+            Product product = productServiceRepo.findProduct(cart.getProduct().getId());
+            CartResponse cartResponse=new CartResponse(cart.getId(), cart.getQty(),cart.getUser().getId(),cart.getProduct().getId(),product);
             cartResponses.add(cartResponse);
         }
         return cartResponses;
