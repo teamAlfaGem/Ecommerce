@@ -3,6 +3,7 @@ package lk.phoneix.v1.demo.security.services.repos;
 
 
 import lk.phoneix.v1.demo.models.Cart;
+import lk.phoneix.v1.demo.payloads.request.UpdateCartRequest;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface CartServiceRepo {
 
     Cart saveCart(Cart cart);
 
-    void updateCart(Cart cart);
+    Cart updateCart(UpdateCartRequest cart);
     public List<Cart> getCartByUserId(Long user_id);
 
 }

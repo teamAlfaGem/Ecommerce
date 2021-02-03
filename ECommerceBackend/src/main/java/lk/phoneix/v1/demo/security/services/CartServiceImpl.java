@@ -1,6 +1,7 @@
 package lk.phoneix.v1.demo.security.services;
 
 import lk.phoneix.v1.demo.models.Cart;
+import lk.phoneix.v1.demo.payloads.request.UpdateCartRequest;
 import lk.phoneix.v1.demo.repository.CartRepository;
 import lk.phoneix.v1.demo.security.services.repos.CartServiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class CartServiceImpl implements CartServiceRepo {
 
     @Override
     public void deleteCart(Long cartId) {
-
+        cartRepository.deleteById(cartId);
     }
 
     @Override
@@ -41,8 +42,11 @@ public class CartServiceImpl implements CartServiceRepo {
     }
 
     @Override
-    public void updateCart(Cart cart) {
-
+    public Cart updateCart(UpdateCartRequest cart) {
+        Cart _cart=cartRepository.findById(cart.getId()).get();
+        _cart.setQty(cart.getQty());
+        Cart newCart= cartRepository.save(_cart);
+        return newCart;
     }
 
     @Override

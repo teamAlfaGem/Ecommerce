@@ -76,7 +76,7 @@ public class ProductController {
 //    }
 
 
-    @GetMapping("/getproduct/{imagename}")
+    @GetMapping("/getproduct/byimgname/{imagename}")
     public ResponseEntity<Resource> getProduct(@PathVariable("imagename") String imagename, HttpServletRequest request){
         String contentType=null;
         Resource resource=null;
@@ -95,6 +95,11 @@ public class ProductController {
                 .header(HttpHeaders.CONTENT_DISPOSITION,"attachment; filename=\""+resource.getFilename()+"\"")
                 .body(resource);
 
+    }
+
+    @GetMapping("getproduct/byid/{productId}")
+    public Product findProduct(@PathVariable("productId") long productId){
+        return productServiceRepo.findProduct(productId);
     }
 
 
