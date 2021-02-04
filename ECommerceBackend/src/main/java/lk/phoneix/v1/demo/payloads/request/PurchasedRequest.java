@@ -1,7 +1,7 @@
 package lk.phoneix.v1.demo.payloads.request;
 
 import java.sql.Date;
-
+import java.util.*;
 public class PurchasedRequest {
 
     private Long id;
@@ -18,7 +18,7 @@ public class PurchasedRequest {
     private int amount;
     private int cvv;
     private long userId;
-    private long productId;
+    private List<Long> productIds;
 
     public Long getId() {
         return id;
@@ -132,11 +132,11 @@ public class PurchasedRequest {
         this.userId = userId;
     }
 
-    public long getProductId() {
-        return productId;
+    public List<Long> getProductIds() {
+        return productIds;
     }
 
-    public void setProductId(long productId) {
-        this.productId = productId;
+    public void setProductIds(List<Long> productIds) {
+        this.productIds = productIds;
     }
 }
