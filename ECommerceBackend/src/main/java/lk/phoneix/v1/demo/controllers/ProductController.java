@@ -48,7 +48,7 @@ public class ProductController {
         Product product=new Product(pname,brand,category,price,description,imageName,uploadDir,keyWords);
         String productImageName=productServiceRepo.saveProduct(file,product);
         String imgDowloadUri= ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/api/product/getproduct/")
+                .path("/api/product/getproduct/byimgname/")
                 .path(productImageName)
                 .toUriString();
         System.out.println(imgDowloadUri);
