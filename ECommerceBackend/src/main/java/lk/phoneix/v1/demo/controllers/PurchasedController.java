@@ -43,6 +43,7 @@ public class PurchasedController {
             for (long productId : productIds) {
                 Product product = productServiceRepo.findProduct(productId);
                 Cart cart = cartServiceRepo.getCartByUserIdandProductId(purchasedRequest.getUserId(), product.getId());
+                cartServiceRepo.deleteCart(cart.getId());
                 productOrders.setProduct(product);
                 productOrders.setQty(cart.getQty());
                 productOrdersServiceRepo.saveOrders(productOrders);
