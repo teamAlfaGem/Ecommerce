@@ -10,48 +10,52 @@ import { useSelector } from 'react-redux';
 
 const Cart = () => {
     let products = useSelector((state) => state.products);
+    let totalPrice = 0;
     
     const [cartProducts, setCartProducts] = useState([]);
 
+    const getTotalPrice = () => {
+        let price = 0;
+        for (let i = 0; i < cartProducts.length; i++){
+          price += cartProducts[i].price * cartProducts[i].qty
+        }
+      
+        return price
+      }
+
     useEffect(() => {
-
-        const getProductsFromCart = async () => {
-
-            let response;
-         
-
+        
+        const getProductsToCart = async () => {
+            
             try {
-                response = await axios(`${process.env.REACT_APP_API}/cart/getcart/${JSON.parse(sessionStorage.getItem('user')).id}`)
-                
+                const response = await axios(`${process.env.REACT_APP_API}/cart/getcart/${JSON.parse(sessionStorage.getItem('user')).id}`)
+                console.log(response)
+                const tempCartProducts = response.data.map(data => ({
+                    productId : data.productId,
+                    qty: data.qty,
+                    productName: data.product.pname,
+                    img: data.product.uploadDir,
+                    price: data.product.price
+                }))
+
+                setCartProducts(tempCartProducts)
+               
             } catch (error) {
                 console.log(error);            
             }
-            
-            const filteredData = response.data.map(cartProduct => ({id: cartProduct.productId, qty: cartProduct.qty }) );
-            
-            let tempCartProducts = [];
 
-            for (let i = 0; i < filteredData.length; i++) {
-                let temp = products.filter(product => product.id === filteredData[i].id )
-                
-                setTimeout(() => {}, 2)
-
-                tempCartProducts.push({productId: temp[0].id, productName: temp[0].pname, qty: filteredData[i].qty,
-                     price: temp[0].price, img: temp[0].uploadDir })
-            }
-
-            setCartProducts(tempCartProducts);
         }
 
-        getProductsFromCart();
+        getProductsToCart();
+      
 
     }, [products])
-    
+            
     console.log(cartProducts);
     return (
         <Container className="mt-2">
             <Row className="d-flex flex-row justify-content-between">
-                <h1>Total Price: </h1>
+                <h1>Total Price: {getTotalPrice()}</h1>
                 <Button variant="success" className="mt-3 px-5">Buy</Button>
             </Row>
             
