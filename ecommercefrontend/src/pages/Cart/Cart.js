@@ -45,9 +45,24 @@ const Cart = () => {
         }
 
         getProductsToCart();
-      
+      }, [])
 
-    }, [])
+    const ifCartProductsIsEmpty = (
+        <h3 className="pt-5">
+            <i>No Products in cart...</i>
+        </h3>
+    )
+
+    const ifCartProductsIsNotEmpty = (
+        <div className="d-flex flex-wrap flex-row ">
+                {cartProducts.map((product, index) => (
+                    <div className="m-3" key={index} >
+                        <SingleProductInCart product={product}/>
+                    </div>  
+                ))}
+            </div>
+    )
+                  
             
     console.log(cartProducts);
     return (
@@ -57,14 +72,7 @@ const Cart = () => {
                 <Button variant="success" className="mt-3 px-5">Buy</Button>
             </Row>
             
-            <div className="d-flex flex-wrap flex-row ">
-                {cartProducts.map((product, index) => (
-                    <div className="m-3" key={index} >
-                        <SingleProductInCart product={product}/>
-                    </div>  
-                ))}
-                  
-            </div>
+            {cartProducts.length === 0 ? (ifCartProductsIsEmpty) : (ifCartProductsIsNotEmpty)}
 
            
         </Container>
