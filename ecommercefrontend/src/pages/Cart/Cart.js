@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux';
 
 const Cart = () => {
     let products = useSelector((state) => state.products);
-    let totalPrice = 0;
     
     const [cartProducts, setCartProducts] = useState([]);
 
@@ -31,6 +30,7 @@ const Cart = () => {
                 const response = await axios(`${process.env.REACT_APP_API}/cart/getcart/${JSON.parse(sessionStorage.getItem('user')).id}`)
                 console.log(response)
                 const tempCartProducts = response.data.map(data => ({
+                    cartId : data.id,
                     productId : data.productId,
                     qty: data.qty,
                     productName: data.product.pname,
