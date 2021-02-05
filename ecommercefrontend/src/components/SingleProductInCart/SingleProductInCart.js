@@ -8,7 +8,6 @@ import axios from 'axios';
 
 const SingleProductInCart = ({product}) => {
 
-   
     const updateQty = (amount) => {
         
         try {
@@ -28,7 +27,6 @@ const SingleProductInCart = ({product}) => {
         }
     }
     
-
     const removeFromCart = (cartId) => {
 
         try{
@@ -50,9 +48,9 @@ const SingleProductInCart = ({product}) => {
                     
                     Price : {product.price}<br/><br/>
 
-                    Qty:&nbsp; &nbsp;   <Button variant="warning" size="sm" onClick={() => {updateQty(1)}}>+</Button>
+                    Qty:&nbsp; &nbsp;   <Button variant="warning" size="sm" onClick={() => {updateQty(1)}} >+</Button>
                                             &nbsp;{product.qty}&nbsp;
-                                        <Button variant="warning" size="sm" onClick={() => {updateQty(-1)}}>-</Button>
+                                        <Button variant="warning" size="sm" onClick={() => {updateQty(-1)}} disabled={product.qty === 1}>-</Button>
                     </Card.Text>
                     
                     <Button variant="dark" block onClick={() => {removeFromCart(product.cartId)}}>
