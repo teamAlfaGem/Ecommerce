@@ -6,10 +6,8 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 
 import SingleProductInCart from '../../components/SingleProductInCart/SingleProductInCart'
-import { useSelector } from 'react-redux';
 
 const Cart = () => {
-    let products = useSelector((state) => state.products);
     
     const [cartProducts, setCartProducts] = useState([]);
 
@@ -49,7 +47,7 @@ const Cart = () => {
         getProductsToCart();
       
 
-    }, [products])
+    }, [])
             
     console.log(cartProducts);
     return (
