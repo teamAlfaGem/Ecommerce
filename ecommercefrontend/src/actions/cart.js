@@ -1,4 +1,4 @@
-import { GET_CART_PRODUCTS, REMOVE_FROM_CART_PRODUCTS, INCREMENT_QTY_CART_PRODUCTS, DECREMENT_QTY_CART_PRODUCTS } from './types';
+import { GET_CART_PRODUCTS, REMOVE_FROM_CART_PRODUCTS, UPDATE_CART_PRODUCTS_QTY } from './types';
 
 import axios from 'axios';
 
@@ -21,6 +21,30 @@ export const getCartProducts = () => async (dispatch) => {
             payload: tempCartProducts
         })
         
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const updateCartProducts = (cartId, amount, productId) => async (dispatch) => {
+   
+    try {
+        
+        const response = await axios.put(`${process.env.REACT_APP_API}/cart/updatecart`, {
+            id: cartId,
+            userId: JSON.parse(sessionStorage.getItem('user')).id,
+            productId: productId,
+            qty: amount
+        })
+
+        await dispatch({
+            type: UPDATE_CART_PRODUCTS_QTY,
+            payload: {
+                id: cartId,
+                qty: amount
+            }
+        })
+
     } catch (error) {
         console.log(error)
     }
