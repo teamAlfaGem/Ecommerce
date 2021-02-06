@@ -1,4 +1,4 @@
-import { GET_CART_PRODUCTS, REMOVE_FROM_CART_PRODUCTS, INCREMENT_QTY_CART_PRODUCTS, DECREMENT_QTY_CART_PRODUCTS } from './../actions/types';
+import { GET_CART_PRODUCTS, REMOVE_FROM_CART_PRODUCTS, UPDATE_CART_PRODUCTS_QTY } from './../actions/types';
 
 
 
@@ -10,12 +10,10 @@ export const cartProducts = (products = [], action) => {
         case REMOVE_FROM_CART_PRODUCTS:
             return products
 
-        case INCREMENT_QTY_CART_PRODUCTS:
+        case UPDATE_CART_PRODUCTS_QTY:
             return products
 
-        case DECREMENT_QTY_CART_PRODUCTS:
-            return products
-            
+        
         default:
             return products;
     }
