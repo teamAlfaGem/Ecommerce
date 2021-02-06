@@ -4,27 +4,16 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { updateCartProducts } from '../../actions/cart'
 
 
 const SingleProductInCart = ({product}) => {
 
-    const updateQty = (amount) => {
-        
-        try {
-            const newQty = product.qty + amount;
+    const dispatch = useDispatch()
 
-            axios.put(`${process.env.REACT_APP_API}/cart/updatecart`, {
-                id: product.cartId,
-                userId: JSON.parse(sessionStorage.getItem('user')).id,
-                productId: product.productId,
-                qty: newQty
-            })
-
-            window.location.reload()
-
-        } catch (error) {
-            console.log(error)
-        }
+    const updateQty = async (amount) => {
+        await dispatch(updateCartProducts(product.cartId, product.qty + amount, product.productId))
     }
     
     const removeFromCart = (cartId) => {
