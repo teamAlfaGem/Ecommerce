@@ -11,7 +11,7 @@ export const cartProducts = (products = [], action) => {
             return products
 
         case UPDATE_CART_PRODUCTS_QTY:
-            return products
+            return products.map((product) => product.cartId === action.payload.id ? {...product, qty: action.payload.qty} : product)
 
         
         default:
