@@ -28,6 +28,7 @@ public class PurchasedServiceImpl implements PurchasedServiceRepo {
 
     @Override
     public List<Purchased> getPurchasedByUserId(Long userId) {
-        return null;
+        List<Purchased> purchaseds=purchasedRepository.getPurchasedByUserId(userId);
+        return purchaseds;
     }
 }

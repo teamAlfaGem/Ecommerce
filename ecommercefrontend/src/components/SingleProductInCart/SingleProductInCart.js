@@ -9,6 +9,7 @@ import { updateCartProducts } from '../../actions/cart'
 import { removeFromCart } from './../../actions/cart';
 
 
+
 const SingleProductInCart = ({product}) => {
 
     const dispatch = useDispatch()

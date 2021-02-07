@@ -19,4 +19,7 @@ public interface CartServiceRepo {
     Cart updateCart(UpdateCartRequest cart);
     public List<Cart> getCartByUserId(Long user_id);
 
+    public Cart getCartByUserIdandProductId(Long userId,Long productId);
+
+
 }
