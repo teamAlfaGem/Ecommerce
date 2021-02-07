@@ -1,13 +1,36 @@
 import React from 'react'
+import { axiosWithUserToken } from '../../api'
+import { toast } from 'react-toastify';
+
 
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import axios from 'axios'
 
 const SingleProduct = ({product}) => {
+    console.log(axiosWithUserToken)
+    const addToCart = async (product_id, user_id) => {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API}/cart/savecart`, {
+                userId: user_id, 
+                productId: product_id, 
+                qty: 1}
+            )
+            toast.success('product added to cart')
+            console.log(response);
 
-    const addToCart = () => {
-        
+        } catch (error) {
+            console.log(error);
+        }
     }
+
+    const addToCartBtn = (
+       <Button variant="danger" onClick={() => addToCart(
+           product.id, 
+           JSON.parse(sessionStorage.getItem('user')).id)}>
+               Add to Cart
+        </Button>
+    )
 
     return (
         <div>
@@ -19,9 +42,10 @@ const SingleProduct = ({product}) => {
                     Price : {product.price}
                     
                     </Card.Text>
+                    
                     {sessionStorage.getItem('user') ? 
-                        (<Button variant="danger" >Add to Cart</Button>) : 
-                        ({}) }
+                        (addToCartBtn) : 
+                        ('') }
                     
                     <Button variant="info" className="ml-2">View Product</Button>
                 </Card.Body>

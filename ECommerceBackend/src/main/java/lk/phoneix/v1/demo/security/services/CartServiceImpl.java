@@ -54,4 +54,11 @@ public class CartServiceImpl implements CartServiceRepo {
         List<Cart>carts=cartRepository.getCartByUserId(user_id);
         return carts;
     }
+
+    @Override
+    public Cart getCartByUserIdandProductId(Long userId, Long productId) {
+        return cartRepository.getCartByUserIdAndProductId(userId, productId);
+    }
+
+
 }

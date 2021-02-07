@@ -27,7 +27,7 @@ public class Purchased {
     private int zip;
     @Size(max = 255)
     private String cardName;
-    @Size(max = 20)
+    @Size(max = 255)
     private String cardNumber;
     private Date expDate;
     private int amount;
@@ -60,6 +60,22 @@ public class Purchased {
         this.cvv = cvv;
         this.user = user;
         this.productOrders = productOrders;
+    }
+
+    public Purchased(String firstName, String lastName, @NotBlank @Email String email, String address, String city, String state, int zip, @Size(max = 255) String cardName, @Size(max = 20) String cardNumber, Date expDate, int amount, int cvv, User user) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.cardName = cardName;
+        this.cardNumber = cardNumber;
+        this.expDate = expDate;
+        this.amount = amount;
+        this.cvv = cvv;
+        this.user = user;
     }
 
     public Long getId() {

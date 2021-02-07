@@ -44,3 +44,12 @@ export const logoutAction = () => (dispatch) => {
 
     dispatch({ type: LOGOUT})
 }
+
+export const updateUserOnRefresh = () => async (dispatch) => {
+
+    if (sessionStorage.getItem('user')) {
+        await dispatch({ type: LOGIN_SUCCESS, 
+            payload: { user : JSON.parse(sessionStorage.getItem('user')) }} 
+        )
+    }
+}
