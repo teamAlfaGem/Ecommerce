@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 
 import SingleProductInCart from '../../components/SingleProductInCart/SingleProductInCart'
+import { getCartProducts } from './../../actions/cart';
 
 const Cart = () => {
     
-    const [cartProducts, setCartProducts] = useState([]);
+    const dispatch = useDispatch()
+
+    let cartProducts = useSelector((state) => state.cartProducts)
 
     const getTotalPrice = () => {
         let price = 0;
@@ -21,31 +24,8 @@ const Cart = () => {
       }
 
     useEffect(() => {
-        
-        const getProductsToCart = async () => {
-            
-            try {
-                const response = await axios(`${process.env.REACT_APP_API}/cart/getcart/${JSON.parse(sessionStorage.getItem('user')).id}`)
-                console.log(response)
-                const tempCartProducts = response.data.map(data => ({
-                    cartId : data.id,
-                    productId : data.productId,
-                    qty: data.qty,
-                    productName: data.product.pname,
-                    img: data.product.uploadDir,
-                    price: data.product.price
-                }))
-
-                setCartProducts(tempCartProducts)
-               
-            } catch (error) {
-                console.log(error);            
-            }
-
-        }
-
-        getProductsToCart();
-      }, [])
+        dispatch(getCartProducts())
+      }, [dispatch])
 
     const ifCartProductsIsEmpty = (
         <h3 className="pt-5">
