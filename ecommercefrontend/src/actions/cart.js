@@ -49,3 +49,20 @@ export const updateCartProducts = (cartId, amount, productId) => async (dispatch
         console.log(error)
     }
 }
+
+export const removeFromCart = (cartId) => async (dispatch) =>{
+
+    try {
+        await axios.delete(`${process.env.REACT_APP_API}/cart/delete/${cartId}`);
+
+        await dispatch({
+            type: REMOVE_FROM_CART_PRODUCTS,
+            payload: {
+                id : cartId
+            }
+        })
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
