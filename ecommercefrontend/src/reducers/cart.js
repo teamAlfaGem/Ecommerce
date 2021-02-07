@@ -8,7 +8,7 @@ export const cartProducts = (products = [], action) => {
             return action.payload
 
         case REMOVE_FROM_CART_PRODUCTS:
-            return products
+            return products.filter((product) => product.cartId !== action.payload.id )
 
         case UPDATE_CART_PRODUCTS_QTY:
             return products.map((product) => product.cartId === action.payload.id ? {...product, qty: action.payload.qty} : product)
