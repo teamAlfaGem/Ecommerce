@@ -13,6 +13,7 @@ import Products from './pages/Products/Products'
 import AdminHome from './pages/Admin/AdminHome/AdminHome'
 import AdminProducts from './pages/Admin/AdminProducts/AdminProducts'
 import AdminOrders from './pages/Admin/AdminOrders/AdminOrders'
+import Purchase from './pages/Purchase/Purchase';
 
 import Error from './components/Error/Error'
 
@@ -84,6 +85,7 @@ function App() {
                 <Route exact path="/products" component={Products}/>
                 <Route exact path="/products/single-product/:id" component={SingleProductInfo}/>
                 <Route exact path="/cart" component={Cart}/>
+                <Route exact path="/purchase" component={Purchase} />
                 <Route component={Error} />
               </Switch>
             </PageLayout>
