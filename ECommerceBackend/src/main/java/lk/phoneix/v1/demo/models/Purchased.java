@@ -27,7 +27,7 @@ public class Purchased {
     private int zip;
     @Size(max = 255)
     private String cardName;
-    @Size(max = 20)
+    @Size(max = 255)
     private String cardNumber;
     private Date expDate;
     private int amount;

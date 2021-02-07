@@ -28,24 +28,27 @@ public class PurchasedController {
     @Autowired
     CartServiceRepo cartServiceRepo;
 
-    @PostMapping("/savepirchased")
+    @PostMapping("/savepurchased")
     public ResponseEntity<PurchasedResponse> savePurchased(@Valid @RequestBody PurchasedRequest purchasedRequest){
         try {
             User user = userServiceRepo.findById(purchasedRequest.getUserId());
             List<Cart> carts = cartServiceRepo.getCartByUserId(purchasedRequest.getUserId());
-            Purchased purchased = new Purchased(purchasedRequest.getFirstName(), purchasedRequest.getLastName(), purchasedRequest.getEmail(), purchasedRequest.getAddress(), purchasedRequest.getCity(), purchasedRequest.getState(), purchasedRequest.getZip(), purchasedRequest.getCardName(), purchasedRequest.getCardNumber(), purchasedRequest.getExpDate(), purchasedRequest.getAmount(), purchasedRequest.getCvv(), user);
-            Product_Orders productOrders = new Product_Orders();
-            productOrders.setAmount(purchasedRequest.getAmount());
-            productOrders.setPurchased(purchased);
+            Purchased purchased = new Purchased(user.getFirstName(), user.getLastName(), user.getEmail(), purchasedRequest.getAddress(), purchasedRequest.getCity(), purchasedRequest.getState(), purchasedRequest.getZip(), purchasedRequest.getCardName(), purchasedRequest.getCardNumber(), purchasedRequest.getExpDate(), purchasedRequest.getAmount(), purchasedRequest.getCvv(), user);
+//            Product_Orders productOrders = new Product_Orders();
+//            productOrders.setAmount(purchasedRequest.getAmount());
+//            productOrders.setPurchased(purchased);
             Purchased _purchased = purchasedServiceRepo.savePurchased(purchased);
             List<Long> productIds = purchasedRequest.getProductIds();
             PurchasedResponse purchasedResponse=new PurchasedResponse();
             for (long productId : productIds) {
+                System.out.println("run"+productId);
                 Product product = productServiceRepo.findProduct(productId);
                 Cart cart = cartServiceRepo.getCartByUserIdandProductId(purchasedRequest.getUserId(), product.getId());
                 cartServiceRepo.deleteCart(cart.getId());
-                productOrders.setProduct(product);
-                productOrders.setQty(cart.getQty());
+                System.out.println(cart.getId()+" "+cart.getProduct().getPname());
+//                productOrders.setProduct(product);
+//                productOrders.setQty(cart.getQty());
+                Product_Orders productOrders=new Product_Orders(cart.getQty(), purchasedRequest.getAmount(), purchased, product);
                 productOrdersServiceRepo.saveOrders(productOrders);
             }
             return new ResponseEntity<>(purchasedResponse,HttpStatus.CREATED);

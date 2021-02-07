@@ -13,7 +13,7 @@ public interface CartRepository extends JpaRepository<Cart, Long> {
     @Query(value = "select * from Cart where user_id=?1",nativeQuery = true)
     public List<Cart> getCartByUserId(Long user_id);
 
-    @Query("select a from Cart a where a.user.id=?1 and a.product.id=?2")
+    @Query(value = "select * from Cart where user_id=?1 and product_id=?2", nativeQuery = true )
     public Cart getCartByUserIdAndProductId(Long user_id,Long product_id);
 
 }
