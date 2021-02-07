@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { updateCartProducts } from '../../actions/cart'
+import { removeFromCart } from './../../actions/cart';
 
 
 const SingleProductInCart = ({product}) => {
@@ -16,17 +17,6 @@ const SingleProductInCart = ({product}) => {
         await dispatch(updateCartProducts(product.cartId, product.qty + amount, product.productId))
     }
     
-    const removeFromCart = (cartId) => {
-
-        try{
-
-            axios.delete(`${process.env.REACT_APP_API}/cart/delete/${cartId}`);
-            window.location.reload()
-        }
-        catch(error) {
-            console.log(error);
-        }
-    }
     return (
         <div>
             <Card style={{ width: '18rem' }}>
@@ -42,7 +32,7 @@ const SingleProductInCart = ({product}) => {
                                         <Button variant="warning" size="sm" onClick={() => {updateQty(-1)}} disabled={product.qty === 1}>-</Button>
                     </Card.Text>
                     
-                    <Button variant="dark" block onClick={() => {removeFromCart(product.cartId)}}>
+                    <Button variant="dark" block onClick={() => {dispatch(removeFromCart(product.cartId))}}>
                         Remove from cart
                     </Button>
                 </Card.Body>
