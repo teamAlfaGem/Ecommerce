@@ -1,5 +1,6 @@
 import React, { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
@@ -10,6 +11,8 @@ import { getCartProducts } from './../../actions/cart';
 
 const Cart = () => {
     
+    const history = useHistory()
+
     const dispatch = useDispatch()
 
     let cartProducts = useSelector((state) => state.cartProducts)
@@ -49,7 +52,7 @@ const Cart = () => {
         <Container className="mt-2">
             <Row className="d-flex flex-row justify-content-between">
                 <h1>Total Price: {getTotalPrice()}</h1>
-                <Button variant="success" className="mt-3 px-5">Buy</Button>
+                <Button variant="success" className="mt-3 px-5" onClick={() => { history.push('/purchase') }}>Buy</Button>
             </Row>
             
             {cartProducts.length === 0 ? (ifCartProductsIsEmpty) : (ifCartProductsIsNotEmpty)}
