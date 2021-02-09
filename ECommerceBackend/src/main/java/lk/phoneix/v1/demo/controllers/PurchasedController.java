@@ -39,7 +39,6 @@ public class PurchasedController {
 //            productOrders.setPurchased(purchased);
             Purchased _purchased = purchasedServiceRepo.savePurchased(purchased);
             List<Long> productIds = purchasedRequest.getProductIds();
-            PurchasedResponse purchasedResponse=new PurchasedResponse();
             for (long productId : productIds) {
                 System.out.println("run"+productId);
                 Product product = productServiceRepo.findProduct(productId);
@@ -51,9 +50,9 @@ public class PurchasedController {
                 Product_Orders productOrders=new Product_Orders(cart.getQty(), purchasedRequest.getAmount(), purchased, product);
                 productOrdersServiceRepo.saveOrders(productOrders);
             }
-            return new ResponseEntity<>(purchasedResponse,HttpStatus.CREATED);
+            return new ResponseEntity<>(new PurchasedResponse("Transaction Success"),HttpStatus.CREATED);
         }catch (Exception e){
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(new PurchasedResponse("Transaction Interrupted"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
