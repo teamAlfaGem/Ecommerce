@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useHistory } from 'react-router-dom';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -8,6 +10,8 @@ import Container from 'react-bootstrap/Container';
 
 
 const Purchase = () => {
+
+    const history = useHistory();
     
     const cartProducts = useSelector((state) => state.cartProducts);
     
@@ -36,11 +40,13 @@ const Purchase = () => {
         
         try {
             const postData = {...formData, productIds: prodIds, amount: price, userId: JSON.parse(sessionStorage.getItem('user')).id }
-            console.log(postData)
+           
             const response = await axios.post(`${process.env.REACT_APP_API}/purchased/savepurchased`, postData)
-            console.log(response)
+            
+            toast.success(response.data.message)
+            history.push('/')
         } catch (error) {
-            console.log(error)
+            toast.error('transaction failed')
         }
     }
     return (
