@@ -1,0 +1,21 @@
+.purchase-form {
+    width: 50%;
+    border-radius: 15px;
+    margin-top: 100px; 
+}
+
+.product-list {
+    padding-left: 20px;
+}
+@media (max-width: 720px) {
+    .purchase-form {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 500px){
+    .product-list{
+        padding-left: 0;
+    }
+}

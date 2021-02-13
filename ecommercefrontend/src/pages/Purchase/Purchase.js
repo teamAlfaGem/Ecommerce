@@ -8,9 +8,9 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 
+import "./style.css"
 
 const Purchase = () => {
-
     const history = useHistory();
     
     const cartProducts = useSelector((state) => state.cartProducts);
@@ -25,6 +25,7 @@ const Purchase = () => {
         expDate: '',
         cvv: ''
     })
+
 
     const handleChange = (e) => {
         setFormData(data => ({...data, [e.target.name]: e.target.value}))
@@ -51,16 +52,14 @@ const Purchase = () => {
     }
     return (
         <div>
-            <h1>Purchase page</h1>
+            <Container className="bg-light p-5 mb-5 purchase-form" >
 
-            <Container className="w-50 bg-light p-5 mb-5" style={{borderRadius: '15px'}}>
-
-                <Container className="d-flex flex-direction-row mb-4">
+                <Container className="d-flex flex-wrap flex-direction-row mb-4">
                 <div >
-                    <h5>Items purchased: </h5>
+                    <h5>Purchase items: </h5>
                 
                 </div >
-                <div className="pl-3">
+                <div className="product-list">
                     {cartProducts.map((item, index) => (
                         <li key={index} style={{listStyleType: 'none'}}><h5>{item.productName} X {item.qty}</h5></li>
                     ))}
@@ -76,6 +75,7 @@ const Purchase = () => {
                     </Form.Group>
 
                     <span className="d-flex flex-wrap">
+                        
                         <span className="w-75 d-flex flex-direction-row justify-content-between">
                             
                             <Form.Group style={{width: '45%'}}>
