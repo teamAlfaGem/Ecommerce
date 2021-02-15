@@ -32,7 +32,7 @@ const SingleProduct = ({product}) => {
 
     return (
         <div>
-           <Card style={{ width: '18rem' }}>
+           <Card style={{ width: '18rem' }} className="single-product-card">
                 <Card.Img variant="top" src={product.uploadDir} />
                 <Card.Body>
                     <Card.Title>{product.pname}</Card.Title>
