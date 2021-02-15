@@ -1,7 +1,6 @@
 package lk.phoneix.v1.demo.controllers;
 
 import lk.phoneix.v1.demo.models.Product;
-import lk.phoneix.v1.demo.payloads.request.SaveProductRequest;
 import lk.phoneix.v1.demo.payloads.response.SaveProductResponce;
 import lk.phoneix.v1.demo.repository.ProductRepository;
 import lk.phoneix.v1.demo.security.services.repos.ProductServiceRepo;
@@ -44,8 +43,8 @@ public class ProductController {
     }
 
     @PostMapping("/saveproduct")
-    public SaveProductResponce saveProduct(@RequestParam("file") MultipartFile file,@RequestParam("pname") String pname,@RequestParam("brand") String brand,@RequestParam("category") String category,@RequestParam("price") double price,@RequestParam("description") String description,@RequestParam("imageName") String imageName,@RequestParam("uploadDir") String uploadDir,@RequestParam("keywords") String keyWords){
-        Product product=new Product(pname,brand,category,price,description,imageName,uploadDir,keyWords);
+    public SaveProductResponce saveProduct(@RequestParam("file") MultipartFile file,@RequestParam("pname") String pname,@RequestParam("brand") String brand,@RequestParam("category") String category,@RequestParam("price") double price,@RequestParam int qty,@RequestParam("description") String description,@RequestParam("imageName") String imageName,@RequestParam("uploadDir") String uploadDir,@RequestParam("keywords") String keyWords){
+        Product product=new Product(pname,brand,category,price,qty,description,imageName,uploadDir,keyWords);
         String productImageName=productServiceRepo.saveProduct(file,product);
         String imgDowloadUri= ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/api/product/getproduct/byimgname/")
@@ -55,7 +54,7 @@ public class ProductController {
         Product productGet=productServiceRepo.getProductByName(pname);
         productGet.setUploadDir(imgDowloadUri);
         productRepository.save(productGet);
-        return new SaveProductResponce(pname,brand,category,price,description,productImageName,uploadDir,keyWords,imgDowloadUri, file.getSize());
+        return new SaveProductResponce(pname,brand,category,price,qty,description,productImageName,uploadDir,keyWords,imgDowloadUri, file.getSize());
 
     }
 

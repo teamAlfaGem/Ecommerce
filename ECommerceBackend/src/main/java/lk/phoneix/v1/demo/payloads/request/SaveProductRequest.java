@@ -8,6 +8,7 @@ public class SaveProductRequest {
     private String brand;
     private String category;
     private double price;
+    private int qty;
     private String description;
     private String imageName;
     private String uploadDir;
@@ -48,5 +49,9 @@ public class SaveProductRequest {
 
     public String getKeyWords() {
         return keyWords;
+    }
+
+    public int getQty() {
+        return qty;
     }
 }

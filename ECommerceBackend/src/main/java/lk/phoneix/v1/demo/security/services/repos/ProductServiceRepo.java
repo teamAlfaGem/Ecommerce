@@ -2,6 +2,7 @@ package lk.phoneix.v1.demo.security.services.repos;
 
 import lk.phoneix.v1.demo.models.Product;
 import lk.phoneix.v1.demo.payloads.request.SaveProductRequest;
+import lk.phoneix.v1.demo.payloads.request.UpdateProductRequest;
 import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,7 +18,8 @@ public interface ProductServiceRepo {
 
     String saveProduct(MultipartFile file, Product product);
 
-    void updateProduct(Product product);
+    Product updateProductQty(Product product);
+    Product updateProduct(UpdateProductRequest product);
 
     List<Product>findProductByCategory(String category);
     List<Product>findProductByKeywords(String keyword);
