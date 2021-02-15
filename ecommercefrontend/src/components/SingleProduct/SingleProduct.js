@@ -1,14 +1,12 @@
 import React from 'react'
-import { axiosWithUserToken } from '../../api'
 import { toast } from 'react-toastify';
-
 
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 
 const SingleProduct = ({product}) => {
-    console.log(axiosWithUserToken)
+    
     const addToCart = async (product_id, user_id) => {
         try {
             const response = await axios.post(`${process.env.REACT_APP_API}/cart/savecart`, {

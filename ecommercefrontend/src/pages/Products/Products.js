@@ -17,8 +17,8 @@ const Products = (props) => {
                 Products
             <Container className="d-flex flex-row flex-wrap">
                {products.map((product, index) => (
-                   <div className="m-4">
-                       <SingleProduct key={index} product={product}/>
+                   <div className="m-4" key={index}>
+                       <SingleProduct  product={product}/>
                     </div>
                ))}
             </Container>
