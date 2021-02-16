@@ -3,6 +3,7 @@ package lk.phoneix.v1.demo.security.services;
 import lk.phoneix.v1.demo.exception.FileStorageException;
 import lk.phoneix.v1.demo.models.Product;
 import lk.phoneix.v1.demo.payloads.request.SaveProductRequest;
+import lk.phoneix.v1.demo.payloads.request.UpdateProductRequest;
 import lk.phoneix.v1.demo.repository.ProductRepository;
 import lk.phoneix.v1.demo.security.services.repos.ProductServiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,7 +90,21 @@ public class ProductServiceImpl implements ProductServiceRepo {
     }
 
     @Override
-    public void updateProduct(Product product) {
+    public Product updateProductQty(Product product) {
+        Product _product=productRepository.findById(product.getId()).get();
+        _product.setQty(_product.getQty()-product.getQty());
+        Product upProduct=productRepository.save(_product);
+        return upProduct;
+    }
+
+    @Override
+    public Product updateProduct(UpdateProductRequest product) {
+        Product _product=productRepository.findById(product.getId()).get();
+        _product.setQty(_product.getQty()+product.getQty());
+        _product.setPrice(product.getPrice());
+        _product.setDescription(product.getDescription());
+        Product upProduct=productRepository.save(_product);
+        return upProduct;
 
     }
 
