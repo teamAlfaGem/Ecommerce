@@ -9,13 +9,9 @@ import Container from 'react-bootstrap/Container'
 import { useDispatch } from 'react-redux';
 import { registerAction } from '../../../actions/auth'
 
-import style from './style'
-
 const SignUp = () => {
     const history = useHistory()
     const dispatch = useDispatch()
-    
-    const classes = style
 
     const [formData, setFormData] = useState({
         firstName: "",
@@ -59,12 +55,10 @@ const SignUp = () => {
         }
     }
 
-
-
     return (
         <div>
-            <Container className="mt-5 mb-5 p-5 bg-light " style={classes.formContainer} >
-                <h5 style={classes.info}>
+            <Container className="mt-5 mb-5 p-5 form-container" >
+                <h5 className="info">
                     Please enter your info and <br/>
                     create your account
                 </h5>
