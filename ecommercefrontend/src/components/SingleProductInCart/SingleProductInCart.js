@@ -20,7 +20,7 @@ const SingleProductInCart = ({product}) => {
     
     return (
         <div>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }} className="cart-product-card">
                 <Card.Img variant="top" src={product.img} />
                 <Card.Body className="">
                     <Card.Title>{product.productName}</Card.Title>
