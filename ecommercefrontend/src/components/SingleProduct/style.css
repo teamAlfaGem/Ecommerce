@@ -1,0 +1,4 @@
+.single-product-card {
+    background-color: var(--light-color-theme);
+    border: none !important;
+}

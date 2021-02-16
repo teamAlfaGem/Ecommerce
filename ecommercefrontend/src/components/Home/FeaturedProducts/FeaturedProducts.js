@@ -9,15 +9,15 @@ import img from '../../../images/Huawei-Mate-20-Pro.jpg'
 
 const FeaturedProducts = () => {
     return (
-        <Container>
-            <Row>
-                <Col><img src={img} alt="" style={{height: '30vh'}} /></Col>
-                <Col>
+        <Container className="featured-products-card d-flex flex-wrap justify-content-between">
+           
+                <Col className="pl-0" md={6}><img src={img} alt="" style={{height: '30vh', width: '100%'}} /></Col>
+                <Col className="pt-4" md={6}>
                   <h4>KKKKKKK<br></br></h4>
                   <h5>Price: 500</h5>
-                  <Button variant="info" size="sm" className="mt-5">View product</Button>
+                  <Button variant="info" size="sm" className="mt-5" >View product</Button>
                </Col>
-            </Row>
+          
         </Container>
     )
 }

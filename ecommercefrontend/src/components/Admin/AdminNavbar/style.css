@@ -1,11 +1,10 @@
 :root{
-    --primary: #28B58F;
-    --secondary: #36F5C2;
+    --admin-primary: #28B58F;
 }
 
 
 .menu {
-    background-color: var(--primary);
+    background-color: var(--admin-primary);
     float: left;
     height: 100vh;
 }

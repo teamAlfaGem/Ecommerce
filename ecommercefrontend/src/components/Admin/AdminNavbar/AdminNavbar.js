@@ -3,9 +3,6 @@ import React from 'react'
 import Col from 'react-bootstrap/Col'
 import Nav from 'react-bootstrap/Nav'
 
-
-import './style.css'
-
 const AdminNavbar = () => {
     return (
         <Col md={2} className="menu d-flex flex-column text-center">

@@ -1,14 +1,12 @@
 import React from 'react'
-import { axiosWithUserToken } from '../../api'
 import { toast } from 'react-toastify';
-
 
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 
 const SingleProduct = ({product}) => {
-    console.log(axiosWithUserToken)
+    
     const addToCart = async (product_id, user_id) => {
         try {
             const response = await axios.post(`${process.env.REACT_APP_API}/cart/savecart`, {
@@ -34,7 +32,7 @@ const SingleProduct = ({product}) => {
 
     return (
         <div>
-           <Card style={{ width: '18rem' }}>
+           <Card style={{ width: '18rem' }} className="single-product-card">
                 <Card.Img variant="top" src={product.uploadDir} />
                 <Card.Body>
                     <Card.Title>{product.pname}</Card.Title>

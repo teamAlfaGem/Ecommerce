@@ -1,0 +1,24 @@
+:root{
+    /* --primary-color-theme: #c4c4c4;
+    --secondary-color-theme: #A8A8A8;
+    --light-color-theme: #F5F5F5;
+    --info-color-theme: #E8E8E8;
+    --warning-color-theme: #CFCFCF; */
+
+    --primary-color-theme: #93C4B2;
+    --secondary-color-theme: #7EA898;
+    --light-color-theme: #9FD4C0;
+    --info-color-theme: #AEE8D2;
+    --warning-color-theme: #B8F5DD;
+}
+
+@import "./components//NavBar/style.css";
+
+@import "./components/Admin/AdminNavbar/style.css";
+
+@import "./components/SingleProduct/style.css";
+
+@import "./components/Home/FeaturedProducts/style.css";
+
+@import "./components/Home/Hero/style.css";
+
