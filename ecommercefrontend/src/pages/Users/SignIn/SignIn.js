@@ -9,8 +9,8 @@ import Container from 'react-bootstrap/Container'
 import { useDispatch } from 'react-redux';
 import { loginAction } from '../../../actions/auth'
 
-
-import style from './style'
+// import "./style.css"
+// import style from './style'
 
 const SignIn = () => {
     const history = useHistory()
@@ -41,11 +41,10 @@ const SignIn = () => {
         }
     }
 
-    const classes = style
     return (
         <div>
-            <Container className="mt-5 mb-5 p-5 bg-light" style={classes.formContainer}>
-                <h5 style={classes.info}>
+            <Container className="mt-5 mb-5 p-5 form-container">
+                <h5 className="info">
                     Please enter your Email and <br/>Password to Sign In
                 </h5>
                 <Form onSubmit={handleSubmit} method="post">

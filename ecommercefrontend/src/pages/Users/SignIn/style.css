@@ -1,0 +1,10 @@
+.form-container {
+    width: 40%;
+    border-radius: 15px;
+    background-color: var(--info-color-theme);
+}
+
+.info {
+    text-align: center;
+    margin-top: 40px;
+}
