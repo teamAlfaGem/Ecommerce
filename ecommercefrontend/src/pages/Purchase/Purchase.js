@@ -8,8 +8,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 
-import "./style.css"
-
 const Purchase = () => {
     const history = useHistory();
     
@@ -52,7 +50,7 @@ const Purchase = () => {
     }
     return (
         <div>
-            <Container className="bg-light p-5 mb-5 purchase-form" >
+            <Container className="p-5 mb-5 purchase-form" >
 
                 <Container className="d-flex flex-wrap flex-direction-row mb-4">
                 <div >
