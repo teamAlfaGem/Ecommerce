@@ -37,9 +37,9 @@ const Cart = () => {
     )
 
     const ifCartProductsIsNotEmpty = (
-        <div className="d-flex flex-wrap flex-row justify-content-between">
+        <div className="d-flex flex-wrap flex-row">
                 {cartProducts.map((product, index) => (
-                    <div className="m-3" key={index} >
+                    <div className="m-4" key={index} >
                         <SingleProductInCart product={product}/>
                     </div>  
                 ))}
