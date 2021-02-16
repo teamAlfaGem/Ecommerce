@@ -1,0 +1,5 @@
+.hero {
+    width: 75%;
+    margin: auto;
+    background-color: var(--secondary-color-theme);
+}
