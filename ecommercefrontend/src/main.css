@@ -30,3 +30,5 @@ body {
 @import "./pages/Users/sign-in-up-style.css";
 
 @import "./components/SingleProductInCart/style.css";
+
+@import "./pages/Purchase/style.css";
