@@ -38,19 +38,6 @@ public class Product {
     }
 
 
-
-    public Product(String pname, String brand, String category, double price, int qty, String description, String imageName, String uploadDir, String keywords) {
-        this.pname = pname;
-        this.brand = brand;
-        this.category = category;
-        this.price = price;
-        this.qty = qty;
-        this.description = description;
-        this.imageName = imageName;
-        this.uploadDir = uploadDir;
-        this.keywords = keywords;
-    }
-
     public Product(String pname, String brand, String category, double price, int qty, boolean isFeatured, String description, String imageName, String uploadDir, String keywords) {
         this.pname = pname;
         this.brand = brand;
@@ -64,19 +51,6 @@ public class Product {
         this.keywords = keywords;
     }
 
-    public Product(String pname, String brand, String category, double price, int qty, String description, String imageName, String uploadDir, String keywords, List<Cart> carts, List<Product_Orders> productOrders) {
-        this.pname = pname;
-        this.brand = brand;
-        this.category = category;
-        this.price = price;
-        this.qty = qty;
-        this.description = description;
-        this.imageName = imageName;
-        this.uploadDir = uploadDir;
-        this.keywords = keywords;
-        this.carts = carts;
-        this.productOrders = productOrders;
-    }
 
     public Product(String pname, String brand, String category, double price, int qty, boolean isFeatured, String description, String imageName, String uploadDir, String keywords, List<Cart> carts, List<Product_Orders> productOrders) {
         this.pname = pname;
