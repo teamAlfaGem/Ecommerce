@@ -10,6 +10,15 @@
     --light-color-theme: #9FD4C0;
     --info-color-theme: #AEE8D2;
     --warning-color-theme: #B8F5DD;
+    --background-color: #e5f1ed;
+}
+
+body {
+    background-color: var(--background-color)
+}
+
+.btn {
+    border-radius: 0;
 }
 
 @import "./components//NavBar/style.css";
