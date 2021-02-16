@@ -45,7 +45,13 @@ const SingleProduct = ({product}) => {
                         (addToCartBtn) : 
                         ('') }
                     
-                    <Button variant="info" className="ml-2">View Product</Button>
+                    <Button 
+                        variant="info" 
+                        className={sessionStorage.getItem('user') ? ("ml-2") : ("")}
+                        block={sessionStorage.getItem('user') ? (false) : (true)}
+                        >
+                            View Product
+                    </Button>
                 </Card.Body>
                 </Card>
         </div>
