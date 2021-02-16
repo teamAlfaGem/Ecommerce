@@ -47,6 +47,7 @@ public class PurchasedController {
                 System.out.println(cart.getId()+" "+cart.getProduct().getPname());
 //                productOrders.setProduct(product);
 //                productOrders.setQty(cart.getQty());
+                product.setQty(cart.getQty());
                 Product_Orders productOrders=new Product_Orders(cart.getQty(), purchasedRequest.getAmount(), purchased, product);
                 productOrdersServiceRepo.saveOrders(productOrders);
             }

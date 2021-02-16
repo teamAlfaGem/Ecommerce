@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4781d2a5-e292-4228-ab45-1714f7c371ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/controllers/PurchasedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/controllers/PurchasedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/payloads/request/PurchasedRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/payloads/request/PurchasedRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/repository/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/src/main/java/lk/phoneix/v1/demo/repository/CartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/images/Hp Laptop_HP_laptops_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/controllers/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/controllers/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/controllers/PurchasedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/controllers/PurchasedController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Purchased.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/models/Purchased.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/payloads/request/PurchasedRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/payloads/request/PurchasedRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/repository/CartRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/repository/CartRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/CartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/CartServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/ProductOrdersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/ProductOrdersServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/PurchasedServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/PurchasedServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/repos/CartServiceRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerceBackend/target/classes/lk/phoneix/v1/demo/security/services/repos/CartServiceRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +59,7 @@
       <workItem from="1612447059397" duration="600000" />
       <workItem from="1612537522829" duration="612000" />
       <workItem from="1612549128274" duration="636000" />
+      <workItem from="1612888690907" duration="1365000" />
     </task>
     <servers />
   </component>

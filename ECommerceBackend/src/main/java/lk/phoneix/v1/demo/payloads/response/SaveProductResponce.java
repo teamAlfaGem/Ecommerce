@@ -6,6 +6,7 @@ public class SaveProductResponce {
     private String brand;
     private String category;
     private double price;
+    private int qty;
     private String description;
     private String imageName;
     private String uploadDir;
@@ -13,17 +14,26 @@ public class SaveProductResponce {
     private String imgDownloadUri;
     private long size;
 
-    public SaveProductResponce(String pname, String brand, String category, double price, String description, String imageName, String uploadDir, String keyWords, String imgDownloadUri, long size) {
+    public SaveProductResponce(String pname, String brand, String category, double price, int qty, String description, String imageName, String uploadDir, String keyWords, String imgDownloadUri, long size) {
         this.pname = pname;
         this.brand = brand;
         this.category = category;
         this.price = price;
+        this.qty = qty;
         this.description = description;
         this.imageName = imageName;
         this.uploadDir = uploadDir;
         this.keyWords = keyWords;
         this.imgDownloadUri = imgDownloadUri;
         this.size = size;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
     }
 
     public String getPname() {
