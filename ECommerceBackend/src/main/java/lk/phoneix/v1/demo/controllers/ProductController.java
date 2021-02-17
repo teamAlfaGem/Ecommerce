@@ -43,8 +43,8 @@ public class ProductController {
     }
 
     @PostMapping("/saveproduct")
-    public SaveProductResponce saveProduct(@RequestParam("file") MultipartFile file,@RequestParam("pname") String pname,@RequestParam("brand") String brand,@RequestParam("category") String category,@RequestParam("price") double price,@RequestParam int qty,@RequestParam("description") String description,@RequestParam("imageName") String imageName,@RequestParam("uploadDir") String uploadDir,@RequestParam("keywords") String keyWords){
-        Product product=new Product(pname,brand,category,price,qty,description,imageName,uploadDir,keyWords);
+    public SaveProductResponce saveProduct(@RequestParam("file") MultipartFile file,@RequestParam("pname") String pname,@RequestParam("brand") String brand,@RequestParam("category") String category,@RequestParam("price") double price,@RequestParam int qty,@RequestParam boolean isFeatured,@RequestParam("description") String description,@RequestParam("imageName") String imageName,@RequestParam("uploadDir") String uploadDir,@RequestParam("keywords") String keyWords){
+        Product product=new Product(pname,brand,category,price,qty,isFeatured,description,imageName,uploadDir,keyWords);
         String productImageName=productServiceRepo.saveProduct(file,product);
         String imgDowloadUri= ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/api/product/getproduct/byimgname/")
@@ -54,7 +54,7 @@ public class ProductController {
         Product productGet=productServiceRepo.getProductByName(pname);
         productGet.setUploadDir(imgDowloadUri);
         productRepository.save(productGet);
-        return new SaveProductResponce(pname,brand,category,price,qty,description,productImageName,uploadDir,keyWords,imgDowloadUri, file.getSize());
+        return new SaveProductResponce(pname,brand,category,price,qty,isFeatured,description,productImageName,uploadDir,keyWords,imgDowloadUri, file.getSize());
 
     }
 

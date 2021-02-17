@@ -28,6 +28,11 @@
       "sourceType": "lk.phoneix.v1.demo.models.Product"
     },
     {
+      "name": "file.featured",
+      "type": "java.lang.Boolean",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
       "name": "file.id",
       "type": "java.lang.Long",
       "sourceType": "lk.phoneix.v1.demo.models.Product"
@@ -55,6 +60,11 @@
     {
       "name": "file.product-orders",
       "type": "java.util.List<lk.phoneix.v1.demo.models.Product_Orders>",
+      "sourceType": "lk.phoneix.v1.demo.models.Product"
+    },
+    {
+      "name": "file.qty",
+      "type": "java.lang.Integer",
       "sourceType": "lk.phoneix.v1.demo.models.Product"
     },
     {

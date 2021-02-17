@@ -7,6 +7,7 @@ public class SaveProductResponce {
     private String category;
     private double price;
     private int qty;
+    private boolean isFeatured;
     private String description;
     private String imageName;
     private String uploadDir;
@@ -14,12 +15,13 @@ public class SaveProductResponce {
     private String imgDownloadUri;
     private long size;
 
-    public SaveProductResponce(String pname, String brand, String category, double price, int qty, String description, String imageName, String uploadDir, String keyWords, String imgDownloadUri, long size) {
+    public SaveProductResponce(String pname, String brand, String category, double price, int qty, boolean isFeatured, String description, String imageName, String uploadDir, String keyWords, String imgDownloadUri, long size) {
         this.pname = pname;
         this.brand = brand;
         this.category = category;
         this.price = price;
         this.qty = qty;
+        this.isFeatured = isFeatured;
         this.description = description;
         this.imageName = imageName;
         this.uploadDir = uploadDir;
@@ -114,5 +116,13 @@ public class SaveProductResponce {
 
     public void setSize(long size) {
         this.size = size;
+    }
+
+    public boolean isFeatured() {
+        return isFeatured;
+    }
+
+    public void setFeatured(boolean featured) {
+        isFeatured = featured;
     }
 }
