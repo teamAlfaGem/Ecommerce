@@ -15,6 +15,17 @@ body {
     border-radius: 0;
 }
 
+.btn-info {
+    background-color: #39757f;
+}
+
+.btn-info:hover{
+    background-color: #1690a5;
+    border-color: #2793a7;
+}
+
+
+
 @import "./components//NavBar/style.css";
 
 @import "./components/Admin/AdminNavbar/style.css";
