@@ -11,7 +11,9 @@ const AddProducts = () => {
         category: "",
         brand: "",
         price: 0,
+        qty: 0,
         description: "",
+        isFeatured: false,
         imageName: "",
         uploadDir: "",
         keywords: "",
@@ -19,17 +21,21 @@ const AddProducts = () => {
     })
 
     const handleChange = (e) => {
-
+        console.log(e.target.name, e.target.value)
         setProduct(product => ( { ...product, [e.target.name]: e.target.value } ))
 
+    }
+
+    const handleCheckBox = () => {
+        const isFeaturedPrev = product.isFeatured
+        setProduct(product => ({...product, isFeatured: !isFeaturedPrev}))
+        console.log(product)
     }
 
     const handleFileChange = (e) => {
         console.log(e.target.files[0])
         setProduct(product => ( { ...product, file: e.target.files[0] } ))
     }
-
-
 
     const handleSubmit = async (e) => {
         console.log(product)
@@ -47,12 +53,13 @@ const AddProducts = () => {
         formData.append('imageName',product.imageName)
         formData.append('uploadDir',product.uploadDir)
         formData.append('keywords', product.keywords)
+        formData.append('isFeatured', product.isFeatured)
+        formData.append('qty', product.qty)
 
         try {
             await axios.post(`${process.env.REACT_APP_API}/product/saveproduct`, formData)
 
             toast.success('product added !!')
-
             
         } catch (error) {
             console.log(error)
@@ -69,31 +76,44 @@ const AddProducts = () => {
                     <Form.Control type="text" onChange={handleChange} name="pname" value={product.pname}/>
                 </Form.Group>
 
-                <Form.Group>
-                    <Form.Label>Category</Form.Label>
-                    <Form.Control as="select" onChange={handleChange} name="category" >
-                        <option >None</option>
-                        <option value="phones">Phones</option>
-                        <option value="laptops">Laptops</option>
-                        <option value="pen-drives">Pen drives</option>
-                        <option value="tv">Tv</option>
-                        <option value="consoles">Consoles</option>
-                    </Form.Control>
-                </Form.Group>
+                <span className="d-flex flex-wrap flex-row justify-content-between">
+                    <Form.Group>
+                        <Form.Label>Category</Form.Label>
+                        <Form.Control as="select" onChange={handleChange} name="category" >
+                            <option >None</option>
+                            <option value="phones">Phones</option>
+                            <option value="laptops">Laptops</option>
+                            <option value="pen-drives">Pen drives</option>
+                            <option value="tv">Tv</option>
+                            <option value="consoles">Consoles</option>
+                        </Form.Control>
+                    </Form.Group>
 
-                <Form.Group>
-                    <Form.Label>Brand</Form.Label>
-                    <Form.Control type="text" onChange={handleChange} name="brand" value={product.brand}/>
-                </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Brand</Form.Label>
+                        <Form.Control type="text" onChange={handleChange} name="brand" value={product.brand}/>
+                    </Form.Group>
+                </span>
 
-                <Form.Group>
-                    <Form.Label>Price</Form.Label>
-                    <Form.Control type="number" onChange={handleChange} name="price" value={product.price}/>
-                </Form.Group>
-
-                <Form.Group >
+                    <Form.Group >
                     <Form.Label>Description</Form.Label>
                     <Form.Control as="textarea" rows={2} onChange={handleChange} name="description" value={product.description}/>
+                </Form.Group>
+                
+                <span className="d-flex flex-wrap flex-row justify-content-between">
+                    <Form.Group>
+                        <Form.Label>Price</Form.Label>
+                        <Form.Control type="number" onChange={handleChange} name="price" value={product.price}/>
+                    </Form.Group>
+
+                    <Form.Group>
+                        <Form.Label>Quantity</Form.Label>
+                        <Form.Control type="number" onChange={handleChange} name="qty" value={product.qty}/>
+                    </Form.Group>
+                </span>
+
+                <Form.Group>
+                    <Form.Check type="checkbox" label="is featured ?" onChange={handleCheckBox} />
                 </Form.Group>
 
                 <Form.Group>
