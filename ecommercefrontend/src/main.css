@@ -4,11 +4,13 @@
     --light-color-theme: #9FD4C0;
     --info-color-theme: #AEE8D2;
     --warning-color-theme: #B8F5DD;
-    --background-color: #e5f1ed;
+    /* --background-color: #e5f1ed; */
+    --background-color: #d4f5ea;
 }
 
 body {
     background-color: var(--background-color)
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(199,250,234,1) 0%, rgba(101,255,205,1) 100%); */
 }
 
 .btn {
