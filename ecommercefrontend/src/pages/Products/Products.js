@@ -13,8 +13,6 @@ const Products = (props) => {
     
     return (
         <div>
-            {props.match.params.id}<br/>
-                Products
             <Container className="d-flex flex-wrap flex-row">
                {products.map((product, index) => (
                    <div className="m-4" key={index}>
