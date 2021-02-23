@@ -49,6 +49,7 @@ const SingleProduct = ({product}) => {
                         variant="info" 
                         className={sessionStorage.getItem('user') ? ("ml-2") : ("")}
                         block={sessionStorage.getItem('user') ? (false) : (true)}
+                        href={(`/products/single-product/${product.id}`)}
                         >
                             View Product
                     </Button>

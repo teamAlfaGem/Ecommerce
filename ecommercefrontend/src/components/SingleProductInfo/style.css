@@ -1,0 +1,33 @@
+.prod-info-container{
+    padding: 10px 0px;
+    width: 50%;
+    background-color: var(--light-color-theme);
+    box-shadow: -3px 3px 8px var(--secondary-color-theme);
+}
+.prod-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.prod-info img{
+    height: 50vh;
+    width: 20vw;
+}
+
+.prod-info-price{
+    margin-top: 100px;
+}
+
+.prod-info-desc{
+    list-style: square;
+    margin-left: 50px;
+    
+    padding-bottom: 5px;
+}
+
+.prod-info-add-to-cart{
+    margin-top: 30px auto;
+    padding: 5px 30px;
+}
