@@ -17,7 +17,6 @@ const Home = () => {
 
     return (
         <div>
-            Home
             <Hero/>
             <Container className="w-75 pt-5 mb-4">
                 <h3 className="mb-4">Best Phones</h3>

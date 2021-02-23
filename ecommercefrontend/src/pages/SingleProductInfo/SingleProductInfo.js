@@ -32,6 +32,7 @@ const SingleProductInfo = (props) => {
 
     return (
         <ProductInfo 
+            id={product.id}
             img={product.uploadDir}
             name={product.pname}
             description={product.description}
