@@ -1,14 +1,31 @@
 import React from 'react'
+import axios from 'axios';
+import {toast} from 'react-toastify';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-const ProductInfo = ({name, img, description, price}) => {
+const ProductInfo = ({id, name, img, description, price}) => {
     
     const descriptionsArray = String(description).split(',');
     console.log(descriptionsArray);
+
+    const addToCart = async (product_id) => {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API}/cart/savecart`, {
+                userId: JSON.parse(sessionStorage.getItem('user')).id, 
+                productId: product_id, 
+                qty: 1}
+            )
+            toast.success('product added to cart')
+            console.log(response);
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
   
     return (
         <Container className="mt-5 prod-info-container ">
@@ -28,7 +45,13 @@ const ProductInfo = ({name, img, description, price}) => {
                         </li>
                     ))}</h4>
                     <h4 className="prod-info-price">price: {price}</h4>
-                    <Button variant="danger" className="prod-info-add-to-cart">Add to cart</Button>
+                    <Button 
+                        variant="danger" 
+                        className="prod-info-add-to-cart"
+                        onClick={() => {addToCart(id)}}
+                    >
+                        Add to cart
+                    </Button>
                 </Col>
             </Row>
         </Container>

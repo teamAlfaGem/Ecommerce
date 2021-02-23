@@ -1,5 +1,6 @@
 .hero {
     width: 75%;
+    margin-top: 20px;
     margin: auto;
     background-color: var(--secondary-color-theme);
 }
