@@ -13,6 +13,8 @@ const SingleProductInfo = (props) => {
     const [product, setProduct] = useState({});
     const productId = props.match.params.id;
 
+    // const product = useSelector(state => state.products).filter(product => product.id == parseInt(productId))[0]
+
     useEffect(() => {
         const getProductById = async () => {
             try {
@@ -28,9 +30,7 @@ const SingleProductInfo = (props) => {
         getProductById()
     }, [])
 
-   
     return (
-        
         <ProductInfo 
             img={product.uploadDir}
             name={product.pname}
