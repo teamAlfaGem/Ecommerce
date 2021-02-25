@@ -2,7 +2,7 @@
     padding: 10px 0px;
     width: 50%;
     background-color: var(--light-color-theme);
-    box-shadow: -3px 3px 8px var(--secondary-color-theme);
+    box-shadow: -5px 6px 5px var(--secondary-color-theme);
 }
 .prod-info{
     display: flex;
@@ -31,3 +31,4 @@
     margin-top: 30px auto;
     padding: 5px 30px;
 }
+

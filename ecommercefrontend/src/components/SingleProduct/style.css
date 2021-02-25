@@ -3,3 +3,11 @@
     border: none !important;
     box-shadow: -3px 3px 8px var(--secondary-color-theme);
 }
+
+.single-product-card:hover {
+    box-shadow: -8px 9px 10px var(--secondary-color-theme);
+}
+
+@media (max-width: 765px) {
+    
+}
