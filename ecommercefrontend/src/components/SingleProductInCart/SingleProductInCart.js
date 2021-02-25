@@ -3,7 +3,6 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { updateCartProducts } from '../../actions/cart'
 import { removeFromCart } from './../../actions/cart';

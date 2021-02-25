@@ -13,9 +13,9 @@ const Products = (props) => {
     
     return (
         <div>
-            <Container className="d-flex flex-wrap flex-row">
+            <Container className="products-container">
                {products.map((product, index) => (
-                   <div className="m-4" key={index}>
+                   <div className="m-4 product-div" key={index}>
                        <SingleProduct  product={product}/>
                     </div>
                ))}

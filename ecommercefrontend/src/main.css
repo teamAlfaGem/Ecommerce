@@ -6,6 +6,7 @@
     --warning-color-theme: #B8F5DD;
     /* --background-color: #e5f1ed; */
     --background-color: #d4f5ea;
+    --tab-view-width: 768px;
 }
 
 body {
@@ -48,3 +49,23 @@ body {
 @import "./pages/Purchase/style.css";
 
 @import "./components/SingleProductInfo/style.css";
+
+@import "./pages/Products/style.css";
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+    h4 {
+        font-size: 1.1em;
+    }
+    h5 {
+        font-size: 1em;
+    }
+}
