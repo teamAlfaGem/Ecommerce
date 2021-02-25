@@ -17,7 +17,15 @@ const FeaturedProducts = ({product}) => {
                 <Col className="info-col" lg={6} md={12} sm={12}>
                   <h4>{product.pname}<br></br></h4>
                   <h5>Price: {product.price}</h5>
-                  <Button variant="info" size="sm" className="featured-view-btn" >View product</Button>
+                  
+                  <Button 
+                    variant="info" 
+                    size="sm" 
+                    className="featured-view-btn"
+                    href={(`/products/single-product/${product.id}`)} 
+                    >
+                        View product
+                    </Button>
                </Col>
           
         </Container>
