@@ -45,13 +45,21 @@ const ProductInfo = ({id, name, img, description, price}) => {
                         </li>
                     ))}</h4>
                     <h4 className="prod-info-price">price: {price}</h4>
-                    <Button 
+                    {sessionStorage.getItem('user') ? (
+                        <Button 
                         variant="danger" 
                         className="prod-info-add-to-cart"
                         onClick={() => {addToCart(id)}}
                     >
                         Add to cart
                     </Button>
+                    ) : (
+                        <Button 
+                            variant="secondary"
+                            href="/"
+                        >Home</Button>
+                    )}
+                    
                 </Col>
             </Row>
         </Container>
