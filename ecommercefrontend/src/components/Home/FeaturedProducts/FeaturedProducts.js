@@ -5,8 +5,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-import img from '../../../images/Huawei-Mate-20-Pro.jpg'
-
 const FeaturedProducts = ({product}) => {
     return (
         <Container className="featured-products-card mt-4">

@@ -8,6 +8,12 @@
     box-shadow: -8px 9px 10px var(--secondary-color-theme);
 }
 
-@media (max-width: 765px) {
-    
+@media (max-width: 768px) {
+    .h5 {
+        font-size: 1.1em !important;
+    }
+
+    .card-text {
+        font-size: 1em !important;
+    }
 }

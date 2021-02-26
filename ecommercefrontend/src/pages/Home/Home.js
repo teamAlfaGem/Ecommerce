@@ -18,7 +18,7 @@ const Home = () => {
     return (
         <div>
             <Hero/>
-            <Container className="w-75 pt-5 mb-4">
+            <Container className="featured-products-container w-75 pt-5 mb-4">
                 <h3 className="mb-4">Best Phones</h3>
                 <Row className="d-flex flex-wrap justify-content-between">
                    
@@ -28,7 +28,7 @@ const Home = () => {
                 </Row>
             </Container>
 
-            <Container className="w-75 pt-5 mb-4">
+            <Container className="featured-products-container w-75 pt-5 mb-4">
                 <h3 className="mb-4">Awesome Laptops for your work</h3>
                 <Row className="d-flex flex-wrap justify-content-between">
                    
@@ -38,7 +38,7 @@ const Home = () => {
                 </Row>
             </Container>
 
-            <Container className="w-75 pt-5 mb-4">
+            <Container className="featured-products-container w-75 pt-5 mb-4">
                 <h3 className="mb-4">Great Consoles for gaming</h3>
                 <Row className="d-flex flex-wrap justify-content-between">
                    
