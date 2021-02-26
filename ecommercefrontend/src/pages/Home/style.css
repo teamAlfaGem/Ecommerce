@@ -1,0 +1,5 @@
+@media (max-width: 420px){
+    .featured-products-container {
+        width: 90% !important;
+    }
+}
