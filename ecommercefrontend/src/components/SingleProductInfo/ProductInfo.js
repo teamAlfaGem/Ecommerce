@@ -38,7 +38,6 @@ const ProductInfo = ({id, name, img, description, price}) => {
                 </Col>
                 <Col md={4} sm={12} className="prod-info-">
                     
-                    <h3></h3><br/>
                     <h4>{descriptionsArray.map((desc, index) => (
                         <li className="prod-info-desc">
                             {desc}
