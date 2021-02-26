@@ -22,7 +22,7 @@ const SingleProductInfo = (props) => {
         }
 
         getProductById()
-    }, [])
+    }, [productId])
 
     return (
         <ProductInfo 
