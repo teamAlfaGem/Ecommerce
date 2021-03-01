@@ -55,6 +55,7 @@ const ProductInfo = ({id, name, img, description, price}) => {
                     ) : (
                         <Button 
                             variant="secondary"
+                            className="prod-info-add-to-cart"
                             href="/"
                         >Home</Button>
                     )}
