@@ -12,8 +12,10 @@ const FeaturedProducts = ({product}) => {
                     <img src={product.uploadDir} alt="" />
                 </Col>
                 <Col className="info-col" lg={6} md={12} sm={12}>
-                  <h4>{product.pname}<br></br></h4>
-                  <h5>Price: {product.price}</h5>
+                  <span className="mt-2">
+                    <h4>{product.pname}<br></br></h4>
+                    <h5>Price: {product.price}</h5>
+                  </span>
                   
                   <Button 
                     variant="info" 
@@ -23,7 +25,7 @@ const FeaturedProducts = ({product}) => {
                     >
                         View product
                     </Button>
-               </Col>
+                </Col>
           
         </Container>
     )
