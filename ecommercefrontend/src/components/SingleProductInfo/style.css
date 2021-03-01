@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
 }
 
 .prod-info img{
@@ -23,7 +22,6 @@
 .prod-info-desc{
     list-style: square;
     margin-left: 50px;
-    
     padding-bottom: 5px;
 }
 
@@ -32,3 +30,39 @@
     padding: 5px 30px;
 }
 
+@media (max-width: 768px) {
+    .prod-info-container{
+        width: 70%;
+    }
+
+    .prod-info img{
+        height: 30vh;
+        width: 30vw;
+    }
+}
+
+@media (max-width: 420px){
+
+    .prod-info-container{
+        width: 90%;
+    }
+
+    .prod-info{
+        
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .prod-info img{
+        padding: 30px;
+        height: 50vh;
+        width: 100%;
+    }
+
+    .prod-info-desc{
+        
+        margin-left: 50px !important;
+        padding-bottom: 5px;
+    }
+    
+}
