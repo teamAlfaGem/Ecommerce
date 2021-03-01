@@ -58,7 +58,7 @@ const NavBar = () => {
                                 <i id="cart" className="fa fa-shopping-cart" aria-hidden="true"></i>
                             </Nav.Link>) : ("")}
                             
-                            <Form inline >
+                            <Form inline className="search-form">
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                                 <Button variant="outline-success">Search</Button>
                             </Form>

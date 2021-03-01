@@ -12,3 +12,9 @@
     background-color: var(--info-color-theme);
     color: #dad3d3;
 }
+
+@media (max-width: 420px) {
+    .search-form{
+        margin-bottom: 10px;
+    }
+}
