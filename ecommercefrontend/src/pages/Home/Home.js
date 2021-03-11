@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 const Home = () => {
 
     const products = useSelector((state) => state.products)
-    console.log(products)
+
     const phones = products.filter(product => product.featured === true && product.category === 'phones')
     const consoles = products.filter(product => product.featured === true && product.category === 'consoles')
     const laptops = products.filter(product => product.featured === true && product.category === 'laptops')
@@ -23,7 +23,7 @@ const Home = () => {
                 <Row className="d-flex flex-wrap justify-content-between">
                    
                     {phones.map((product, index) => (
-                        <Col sm={12} md={5}><FeaturedProducts product={product}/></Col>
+                        <Col sm={12} md={5} key={index}><FeaturedProducts product={product}/></Col>
                     ))}
                 </Row>
             </Container>
@@ -33,7 +33,7 @@ const Home = () => {
                 <Row className="d-flex flex-wrap justify-content-between">
                    
                     {laptops.map((product, index) => (
-                        <Col sm={12} md={5}><FeaturedProducts product={product}/></Col>
+                        <Col sm={12} md={5} key={index}><FeaturedProducts product={product}/></Col>
                     ))}
                 </Row>
             </Container>
@@ -43,7 +43,7 @@ const Home = () => {
                 <Row className="d-flex flex-wrap justify-content-between">
                    
                     {consoles.map((product, index) => (
-                        <Col sm={12} md={5}><FeaturedProducts product={product}/></Col>
+                        <Col sm={12} md={5} key={index}><FeaturedProducts product={product}/></Col>
                     ))}
                 </Row>
             </Container>
