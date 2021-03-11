@@ -1,9 +1,12 @@
 import React from 'react'
 
 const Search = (props) => {
+    const searchTerm = props.match.params.id
+
     return (
         <div>
-            <H1>search</H1>
+            <h1>search</h1>
+            <h1>{searchTerm}</h1>
         </div>
     )
 }
