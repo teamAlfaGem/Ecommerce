@@ -9,7 +9,6 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 
-import { toast } from "react-toastify";
 // import './style.css'
 
 import { useDispatch } from 'react-redux';
@@ -28,10 +27,13 @@ const NavBar = () => {
         setSearchTerm(e.target.value);
     }
 
-    const handleSearchbtn = () => {
+    const handleSearchBtn = () => {
         if (searchTerm){
-            history.push(`search/${searchTerm}`);
+            const temp = searchTerm
             setSearchTerm("")
+            console.log(temp);
+            history.push("/")
+            history.push(`search/${temp}`)
         }
     }
 
@@ -76,7 +78,7 @@ const NavBar = () => {
                             
                             <Form inline className="search-form">
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={handleSearch}/>
-                                <Button variant="outline-success" onClick={handleSearchbtn}>Search</Button>
+                                <Button variant="outline-success" onClick={handleSearchBtn} >Search</Button>
                             </Form>
                         </Nav>
                         
