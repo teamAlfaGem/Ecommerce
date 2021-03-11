@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom';
 
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -8,6 +9,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 
+import { toast } from "react-toastify";
 // import './style.css'
 
 import { useDispatch } from 'react-redux';
@@ -16,8 +18,22 @@ import { logoutAction } from '../../actions/auth'
 
 const NavBar = () => {
     const dispatch = useDispatch()
+    const history = useHistory();
     
     const { username } = sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')) : ""
+
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleSearch = (e) => {
+        setSearchTerm(e.target.value);
+    }
+
+    const handleSearchbtn = () => {
+        if (searchTerm){
+            history.push(`search/${searchTerm}`);
+            setSearchTerm("")
+        }
+    }
 
     const contentIfUserIsLoggedIn = (
         <Dropdown>
@@ -59,8 +75,8 @@ const NavBar = () => {
                             </Nav.Link>) : ("")}
                             
                             <Form inline className="search-form">
-                                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                                <Button variant="outline-success">Search</Button>
+                                <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={handleSearch}/>
+                                <Button variant="outline-success" onClick={handleSearchbtn}>Search</Button>
                             </Form>
                         </Nav>
                         
