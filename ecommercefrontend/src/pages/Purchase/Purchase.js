@@ -107,7 +107,7 @@ const Purchase = () => {
                     
                     <span className="w-75 d-flex flex-direction-row justify-content-between">
                         <Form.Group>
-                            <Form.Label>Expire date</Form.Label>
+                            <Form.Label>Exp date</Form.Label>
                             <Form.Control type="date" name="expDate" onChange={handleChange}/>
                         </Form.Group>
                         

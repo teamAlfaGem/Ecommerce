@@ -52,7 +52,7 @@ const Cart = () => {
         <Container className="mt-2">
             <Row className="d-flex flex-row justify-content-between">
                 <h1>Total Price: {getTotalPrice()}</h1>
-                <Button variant="success" className="mt-3 px-5" onClick={() => { history.push('/purchase') }}>Buy</Button>
+                <Button variant="success" className="px-4 m-2" onClick={() => { history.push('/purchase') }}>Buy</Button>
             </Row>
             
             {cartProducts.length === 0 ? (ifCartProductsIsEmpty) : (ifCartProductsIsNotEmpty)}

@@ -36,30 +36,32 @@ const ProductInfo = ({id, name, img, description, price}) => {
                     <img src={img} alt=""></img>
                    <br></br>
                 </Col>
-                <Col md={4} sm={12} className="prod-info-">
+                <Col md={4} sm={12} className="prod-info-display">
                     
                     <h4>{descriptionsArray.map((desc, index) => (
                         <li className="prod-info-desc">
                             {desc}
                         </li>
                     ))}</h4>
-                    <h4 className="prod-info-price">price: {price}</h4>
-                    {sessionStorage.getItem('user') ? (
-                        <Button 
-                        variant="danger" 
-                        className="prod-info-add-to-cart"
-                        onClick={() => {addToCart(id)}}
-                    >
-                        Add to cart
-                    </Button>
-                    ) : (
-                        <Button 
-                            variant="secondary"
+
+                    <span>
+                        <h4 className="prod-info-price">price: {price}</h4>
+                        {sessionStorage.getItem('user') ? (
+                            <Button 
+                            variant="danger" 
                             className="prod-info-add-to-cart"
-                            href="/"
-                        >Home</Button>
-                    )}
-                    
+                            onClick={() => {addToCart(id)}}
+                        >
+                            Add to cart
+                        </Button>
+                        ) : (
+                            <Button 
+                                variant="secondary"
+                                href="/"
+                            >Home</Button>
+                        )}
+                    </span>
+
                 </Col>
             </Row>
         </Container>

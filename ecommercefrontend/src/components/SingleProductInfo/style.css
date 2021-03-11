@@ -10,13 +10,15 @@
     justify-content: space-around;
 }
 
+.prod-info-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .prod-info img{
     height: 50vh;
     width: 20vw;
-}
-
-.prod-info-price{
-    margin-top: 100px;
 }
 
 .prod-info-desc{
@@ -63,6 +65,10 @@
         
         margin-left: 50px !important;
         padding-bottom: 5px;
+    }
+
+    .prod-info-display span{
+        text-align: center !important;
     }
     
 }
