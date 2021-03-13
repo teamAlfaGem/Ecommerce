@@ -31,7 +31,6 @@ const NavBar = () => {
         if (searchTerm){
             const temp = searchTerm
             setSearchTerm("")
-            console.log(temp);
             history.push("/")
             history.push(`search/${temp}`)
         }
