@@ -11,11 +11,15 @@ const Search = (props) => {
     const [searchResults, setSearchResults] = useState([]);
 
     useEffect(() => {
-        console.log('hello')
         const getSearchResults = async () => {
-            const results = await axios.get(`${process.env.REACT_APP_API}/product/keyword/${searchTerm}`)
-            setSearchResults(results.data)
+            try {
+                const results = await axios.get(`${process.env.REACT_APP_API}/product/keyword/${searchTerm}`)
+                setSearchResults(results.data)
+            } catch (error) {
+                console.log(error)                
+            }
         }
+        
         getSearchResults()
     }, [searchTerm])
 
